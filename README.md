@@ -6,6 +6,12 @@ Homebrew tap for Task Manager, a Windows 11-style task manager for macOS.
 brew install --cask alexd-gh/tap/win-task-manager
 ```
 
+If Homebrew refuses to load a cask from an untrusted tap, trust this one first:
+
+```bash
+brew trust alexd-gh/tap
+```
+
 The app is ad-hoc signed (not notarized), so macOS blocks the first launch. Open it once, then go to
 System Settings › Privacy & Security and click **Open Anyway**.
 
