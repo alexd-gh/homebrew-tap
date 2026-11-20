@@ -8,6 +8,8 @@ sensors and Apple silicon internals.
 This repository is the [Homebrew](https://brew.sh) tap that distributes it. It holds the cask, the release
 downloads and the documentation; the app's source code is not published.
 
+![Task Manager for Mac: the Processes page](docs/images/processes.jpg)
+
 | | |
 |---|---|
 | Latest version | **1.1** (build 37), 20 November 2026 |
@@ -17,8 +19,9 @@ downloads and the documentation; the app's source code is not published.
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [Features](#features) · [Permissions and privacy](#permissions-and-privacy) ·
-[Known limits](#known-limits) · [License](#license) · [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
+[Install](#install) · [First launch](#first-launch) · [Features](#features) · [Screenshots](#screenshots) ·
+[Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
+[Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
 ## Install
 
@@ -98,6 +101,49 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | ⇧⌘C | Copy summary | ⌥⌘D | Fewer details |
 | ⌥⌘G | Graph summary view | ⌥⌘T | Always on top |
 | ⌃⇧⎋ | Show Task Manager | | |
+
+## Screenshots
+
+Every page, with a caption, is in the [screenshot tour](docs/screenshots.md). Personal details are covered with
+grey bars.
+
+<table>
+  <tr>
+    <td width="33%"><a href="docs/screenshots.md#cpu"><img src="docs/images/performance-cpu.jpg" alt="Performance: CPU"></a><br><sub>Performance: CPU</sub></td>
+    <td width="33%"><a href="docs/screenshots.md#memory"><img src="docs/images/performance-memory.jpg" alt="Performance: Memory"></a><br><sub>Performance: Memory</sub></td>
+    <td width="33%"><a href="docs/screenshots.md#gpu"><img src="docs/images/performance-gpu.jpg" alt="Performance: GPU"></a><br><sub>Performance: GPU</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#disk"><img src="docs/images/performance-disk.jpg" alt="Performance: Disk"></a><br><sub>Performance: Disk</sub></td>
+    <td><a href="docs/screenshots.md#wi-fi"><img src="docs/images/performance-wifi.jpg" alt="Performance: Wi-Fi"></a><br><sub>Performance: Wi-Fi</sub></td>
+    <td><a href="docs/screenshots.md#battery"><img src="docs/images/performance-battery.jpg" alt="Performance: Battery"></a><br><sub>Performance: Battery</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#app-history"><img src="docs/images/app-history.jpg" alt="App history"></a><br><sub>App history</sub></td>
+    <td><a href="docs/screenshots.md#startup-apps"><img src="docs/images/startup-apps.jpg" alt="Startup apps"></a><br><sub>Startup apps</sub></td>
+    <td><a href="docs/screenshots.md#users"><img src="docs/images/users.jpg" alt="Users"></a><br><sub>Users</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#details"><img src="docs/images/details.jpg" alt="Details"></a><br><sub>Details</sub></td>
+    <td><a href="docs/screenshots.md#services"><img src="docs/images/services.jpg" alt="Services"></a><br><sub>Services</sub></td>
+    <td><a href="docs/screenshots.md#settings"><img src="docs/images/settings.jpg" alt="Settings"></a><br><sub>Settings</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-performance.jpg" alt="Extended graphs"></a><br><sub>Extended graphs</sub></td>
+    <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-processes.jpg" alt="Processes with Extended graphs"></a><br><sub>Processes, Extended graphs</sub></td>
+    <td><a href="docs/screenshots.md#about-and-license"><img src="docs/images/about.jpg" alt="About Task Manager"></a><br><sub>About</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#drivers"><img src="docs/images/advanced-drivers.jpg" alt="Advanced: Drivers"></a><br><sub>Advanced: Drivers</sub></td>
+    <td><a href="docs/screenshots.md#connections"><img src="docs/images/advanced-connections.jpg" alt="Advanced: Connections"></a><br><sub>Advanced: Connections</sub></td>
+    <td><a href="docs/screenshots.md#disk-space"><img src="docs/images/advanced-disk-space.jpg" alt="Advanced: Disk space"></a><br><sub>Advanced: Disk space</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#power-and-frequency"><img src="docs/images/advanced-power.jpg" alt="Advanced: Power and frequency"></a><br><sub>Advanced: Power and frequency</sub></td>
+    <td><a href="docs/screenshots.md#apple-silicon"><img src="docs/images/advanced-apple-silicon.jpg" alt="Advanced: Apple silicon"></a><br><sub>Advanced: Apple silicon</sub></td>
+    <td><a href="docs/screenshots.md#about-and-license"><img src="docs/images/about-license.jpg" alt="License"></a><br><sub>License</sub></td>
+  </tr>
+</table>
 
 ## Permissions and privacy
 
