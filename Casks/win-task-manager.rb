@@ -7,7 +7,7 @@ cask "win-task-manager" do
   desc "Windows 11-style task manager"
   homepage "https://github.com/alexd-gh/homebrew-tap"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Task Manager.app"
 
