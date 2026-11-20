@@ -1,6 +1,6 @@
 # alexd-gh/tap
 
-Homebrew tap for [Task Manager](https://github.com/alexd-gh/Win-Task-Manager), a Windows 11-style task manager for macOS.
+Homebrew tap for Task Manager, a Windows 11-style task manager for macOS.
 
 ```bash
 brew install --cask alexd-gh/tap/win-task-manager
