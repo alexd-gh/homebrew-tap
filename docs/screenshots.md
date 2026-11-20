@@ -109,15 +109,84 @@ Advanced pages, with the version line at the bottom.
 
 ## Extended graphs
 
-An optional graph style (Settings › Extended graphs): smooth glowing curves coloured by level, LED meters and a
-"now" marker. With Show advanced readings also on, the CPU page adds the clock speed per cluster and temperature,
-and an NPU tile appears.
+An optional style for the whole app, switched on in Settings › Extended graphs. Graphs become smooth glowing curves
+coloured by level (green when quiet, through yellow, to red when busy), with LED meters, a "now" marker at the right
+edge and smooth motion between updates. Pages without graphs get glowing values, level bars and status lights.
+Saturation, visual bloom, HDR (brighter than white on HDR and XDR displays) and smooth motion are adjustable.
 
-![Performance with Extended graphs and advanced readings](images/extended-performance.jpg)
+The screenshots in this section also have **Show advanced readings** on, which adds CPU speed per cluster,
+temperatures and the NPU tile.
 
-The Processes page gets LED meters in the header and level bars in each cell.
+![Settings: Extended graphs options](images/extended-settings.jpg)
+
+### Extended: Processes
+
+LED meters under each column total, and a level bar in every busy cell.
 
 ![Processes with Extended graphs](images/extended-processes.jpg)
+
+### Extended: Performance
+
+The LED meter above each graph shows the current value; the curve's colour follows its level.
+
+![Extended graphs: CPU](images/extended-performance-cpu.jpg)
+
+The memory composition bar becomes an LED strip with a colour per type.
+
+![Extended graphs: Memory](images/extended-performance-memory.jpg)
+
+![Extended graphs: Disk](images/extended-performance-disk.jpg)
+
+![Extended graphs: Wi-Fi](images/extended-performance-wifi.jpg)
+
+![Extended graphs: GPU](images/extended-performance-gpu.jpg)
+
+The NPU tile (Show advanced readings) shows Neural Engine power. On this Mac macOS only gives that reading to
+administrators, and the page says so.
+
+![Extended graphs: NPU](images/extended-performance-npu.jpg)
+
+The battery's charge history, hourly use and power all glow too.
+
+![Extended graphs: Battery](images/extended-performance-battery.jpg)
+
+The floating graph summary window (double-click a graph, or Summary view) uses the same style.
+
+![Extended graphs: summary view](images/extended-summary-view.jpg)
+
+### Extended: pages without graphs
+
+App history colours each value by how large it is, here with Settings › Show history for all processes on.
+
+![Extended graphs: App history](images/extended-app-history.jpg)
+
+Startup apps and Services get status lights.
+
+![Extended graphs: Startup apps](images/extended-startup-apps.jpg)
+
+![Extended graphs: Services](images/extended-services.jpg)
+
+Users and Details get heat cells, level bars and glowing values.
+
+![Extended graphs: Users](images/extended-users.jpg)
+
+![Extended graphs: Details](images/extended-details.jpg)
+
+### Extended: Advanced pages
+
+The summary cards get LED meters, and the Apple silicon graphs glow like the Performance page.
+
+![Extended graphs: Drivers](images/extended-advanced-drivers.jpg)
+
+![Extended graphs: Connections](images/extended-advanced-connections.jpg)
+
+![Extended graphs: Disk space](images/extended-advanced-disk-space.jpg)
+
+Power and frequency adds a Level column with an LED meter for every sensor.
+
+![Extended graphs: Power and frequency](images/extended-advanced-power.jpg)
+
+![Extended graphs: Apple silicon](images/extended-advanced-apple-silicon.jpg)
 
 ## Advanced pages
 

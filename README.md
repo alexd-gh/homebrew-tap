@@ -129,9 +129,9 @@ grey bars.
     <td><a href="docs/screenshots.md#settings"><img src="docs/images/settings.jpg" alt="Settings"></a><br><sub>Settings</sub></td>
   </tr>
   <tr>
-    <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-performance.jpg" alt="Extended graphs"></a><br><sub>Extended graphs</sub></td>
-    <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-processes.jpg" alt="Processes with Extended graphs"></a><br><sub>Processes, Extended graphs</sub></td>
     <td><a href="docs/screenshots.md#about-and-license"><img src="docs/images/about.jpg" alt="About Task Manager"></a><br><sub>About</sub></td>
+    <td><a href="docs/screenshots.md#settings"><img src="docs/images/settings-other.jpg" alt="Settings: other options"></a><br><sub>Settings: other options</sub></td>
+    <td><a href="docs/screenshots.md#about-and-license"><img src="docs/images/about-license.jpg" alt="License"></a><br><sub>License</sub></td>
   </tr>
   <tr>
     <td><a href="docs/screenshots.md#drivers"><img src="docs/images/advanced-drivers.jpg" alt="Advanced: Drivers"></a><br><sub>Advanced: Drivers</sub></td>
@@ -141,7 +141,35 @@ grey bars.
   <tr>
     <td><a href="docs/screenshots.md#power-and-frequency"><img src="docs/images/advanced-power.jpg" alt="Advanced: Power and frequency"></a><br><sub>Advanced: Power and frequency</sub></td>
     <td><a href="docs/screenshots.md#apple-silicon"><img src="docs/images/advanced-apple-silicon.jpg" alt="Advanced: Apple silicon"></a><br><sub>Advanced: Apple silicon</sub></td>
-    <td><a href="docs/screenshots.md#about-and-license"><img src="docs/images/about-license.jpg" alt="License"></a><br><sub>License</sub></td>
+    <td><a href="docs/screenshots.md#settings"><img src="docs/images/settings.jpg" alt="Settings"></a><br><sub>Settings</sub></td>
+  </tr>
+</table>
+
+### With Extended graphs
+
+The same app with Settings › Extended graphs on: glowing curves coloured by level, LED meters, status lights and
+level bars on every page. All of them are in the [tour](docs/screenshots.md#extended-graphs).
+
+<table>
+  <tr>
+    <td width="33%"><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-cpu.jpg" alt="Extended graphs: CPU"></a><br><sub>CPU</sub></td>
+    <td width="33%"><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-memory.jpg" alt="Extended graphs: Memory"></a><br><sub>Memory</sub></td>
+    <td width="33%"><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-gpu.jpg" alt="Extended graphs: GPU"></a><br><sub>GPU</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-disk.jpg" alt="Extended graphs: Disk"></a><br><sub>Disk</sub></td>
+    <td><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-wifi.jpg" alt="Extended graphs: Wi-Fi"></a><br><sub>Wi-Fi</sub></td>
+    <td><a href="docs/screenshots.md#extended-performance"><img src="docs/images/extended-performance-battery.jpg" alt="Extended graphs: Battery"></a><br><sub>Battery</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#extended-processes"><img src="docs/images/extended-processes.jpg" alt="Extended graphs: Processes"></a><br><sub>Processes</sub></td>
+    <td><a href="docs/screenshots.md#extended-pages-without-graphs"><img src="docs/images/extended-app-history.jpg" alt="Extended graphs: App history"></a><br><sub>App history</sub></td>
+    <td><a href="docs/screenshots.md#extended-pages-without-graphs"><img src="docs/images/extended-startup-apps.jpg" alt="Extended graphs: Startup apps"></a><br><sub>Startup apps</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#extended-advanced-pages"><img src="docs/images/extended-advanced-power.jpg" alt="Extended graphs: Power and frequency"></a><br><sub>Power and frequency</sub></td>
+    <td><a href="docs/screenshots.md#extended-advanced-pages"><img src="docs/images/extended-advanced-apple-silicon.jpg" alt="Extended graphs: Apple silicon"></a><br><sub>Apple silicon</sub></td>
+    <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-settings.jpg" alt="Extended graphs settings"></a><br><sub>Extended graphs settings</sub></td>
   </tr>
 </table>
 
