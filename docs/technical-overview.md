@@ -1,7 +1,8 @@
 # Technical overview
 
 How Task Manager for Mac works: where its numbers come from, how often they refresh, what runs in the background
-and how the app is packaged. This describes behaviour, not source code, which isn't published.
+and how the app is packaged. This describes behaviour, not source code, which isn't published. To see each page,
+take the [screenshot tour](screenshots.md).
 
 - [Architecture](#architecture)
 - [Where the numbers come from](#where-the-numbers-come-from)
