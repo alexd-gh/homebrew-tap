@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.7** (build 58), 23 November 2026 ([what's new](#whats-new-in-17)) |
+| Latest version | **1.8** (build 61), 23 November 2026 ([what's new](#whats-new-in-18)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-17) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-18) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -53,32 +53,33 @@ unzip it and drag **Task Manager** to Applications.
    continues and is remembered; **Quit** (or Escape) closes the app. You're asked again only if the license terms
    change. The text is always available under Task Manager › About Task Manager › License….
 
-## What's new in 1.7
+## What's new in 1.8
 
-**Installed apps.** A new Advanced page (⌥⌘6) for managing your apps, modelled on the Installed Apps page of TMOG's
-Task Manager:
+**System info.** A new Advanced page (⌥⌘7) shows what Apple's System Information app shows, with macOS's own
+labels and wording:
 
-- Every app in Applications, `~/Applications` and macOS's own apps, with version, size on disk and when you last
-  opened it. Filter to third-party, App Store, Apple or running apps, or apps you haven't opened in 90 days, and
-  search by name or bundle ID.
-- The selected app shows its publisher (from its code signature), where it came from, and the files it keeps
-  outside the app: containers, caches, preferences, saved window state, web data, launch agents and more, with
-  their sizes.
+- **Hardware:** Hardware Overview, Memory, Audio, Bluetooth, Graphics/Displays, NVMExpress, Power, Storage,
+  Thunderbolt/USB4, USB and the rest. **Network:** Wi-Fi, Network, Locations, Firewall. **Software:** Software
+  Overview, Applications, Extensions, Fonts, Installations, Profiles and more.
+- Long lists open folded and sorted by name, the search box filters the report, and **Copy** or **Save as text…**
+  exports it. **Open System Information** opens Apple's app.
 
-![Advanced › Installed apps](docs/images/advanced-installed-apps.jpg)
+![Advanced › System info: Hardware Overview](docs/images/advanced-system-info.jpg)
 
-- **Uninstall…** quits the app, then moves it and the files you tick to the Trash, so you can put them back. Files
-  found only by the app's name, rather than its bundle ID, start unticked so you can check them first. macOS's own
-  apps can't be removed, and Uninstall is off while Task Manager runs as administrator.
+Also in 1.8:
 
-![Uninstall IINA? with its related files](docs/images/installed-apps-uninstall.jpg)
+- **Restart as administrator works again.** In 1.6 and 1.7 its check that the app's program file hadn't changed
+  always failed on the universal app, so it said the file had changed instead of restarting.
+- **Safer Uninstall.** Installed apps moves the app to the Trash first and its Library files only once that worked,
+  so a refused or cancelled uninstall no longer leaves an app without its settings. An app owned by an
+  administrator or another user, which Task Manager can't move, now says so and points to Finder.
 
-Turn on Settings › Other options › Advanced pages to see it.
+Turn on Settings › Other options › Advanced pages to see System info and the other Advanced pages.
 
-1.6 made End task, publishers and Restart as administrator safer; 1.5 added core kinds on the CPU page and a memory
-graph split by type; earlier releases added open handles per process, Find open file or port and background Disk
-space scans. Every change is in the [release history](CHANGELOG.md), with pictures in the
-[screenshot tour](docs/screenshots.md#new-in-12-to-17).
+1.7 added the Installed apps page with Uninstall; 1.6 made End task and publishers safer; 1.5 added core kinds on
+the CPU page and a memory graph split by type; earlier releases added open handles per process, Find open file or
+port and background Disk space scans. Every change is in the [release history](CHANGELOG.md), with pictures in the
+[screenshot tour](docs/screenshots.md#new-in-12-to-18).
 
 ## Features
 
@@ -107,6 +108,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | **Power and frequency** | Power, voltage, current, temperature and fan sensors as a tree, with live values and their minimum and maximum |
 | **Apple silicon** | The CPU cluster layout, GPU performance states with their frequencies and voltages, energy per chip block, and media engine activity |
 | **Installed apps** | Every installed app with its size, version, last-opened date, publisher and the files it keeps in Library; Uninstall moves the app and the files you choose to the Trash |
+| **System info** | The full hardware, network and software report of Apple's System Information app, searchable, with Copy and Save as text |
 
 ### Also
 
@@ -129,7 +131,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | Shortcut | Action | Shortcut | Action |
 |---|---|---|---|
 | ⌘F | Search | ⌘N | Run new task |
-| ⌘1 – ⌘8 | Switch page | ⌥⌘1 – ⌥⌘6 | Advanced pages (when on) |
+| ⌘1 – ⌘8 | Switch page | ⌥⌘1 – ⌥⌘7 | Advanced pages (when on) |
 | ⌘R | Refresh now | ⌘⌫ | End task |
 | ⌘E | Efficiency mode | ⌘I | Properties (Details) |
 | ⇧⌘C | Copy summary | ⌥⌘D | Fewer details |
@@ -176,6 +178,11 @@ grey bars.
     <td><a href="docs/screenshots.md#power-and-frequency"><img src="docs/images/advanced-power.jpg" alt="Advanced: Power and frequency"></a><br><sub>Advanced: Power and frequency</sub></td>
     <td><a href="docs/screenshots.md#apple-silicon"><img src="docs/images/advanced-apple-silicon.jpg" alt="Advanced: Apple silicon"></a><br><sub>Advanced: Apple silicon</sub></td>
     <td><a href="docs/screenshots.md#installed-apps"><img src="docs/images/advanced-installed-apps.jpg" alt="Advanced: Installed apps"></a><br><sub>Advanced: Installed apps</sub></td>
+  </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#system-info"><img src="docs/images/advanced-system-info.jpg" alt="Advanced: System info"></a><br><sub>Advanced: System info</sub></td>
+    <td><a href="docs/screenshots.md#system-info"><img src="docs/images/system-info-graphics.jpg" alt="System info: Graphics/Displays"></a><br><sub>System info: Graphics/Displays</sub></td>
+    <td></td>
   </tr>
 </table>
 

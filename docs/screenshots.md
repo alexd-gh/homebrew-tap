@@ -242,6 +242,18 @@ Library. Uninstall… lists the app and those files with a box each and moves th
 
 ![Uninstall IINA?](images/installed-apps-uninstall.jpg)
 
+### System info
+
+Apple's System Information report in Task Manager, with macOS's own labels: Hardware, Network and Software
+categories on the left, the selected one on the right (here Hardware Overview; the serial number and hardware IDs
+are hidden in this picture). Search filters the report; Copy and Save as text… export it.
+
+![Advanced: System info](images/advanced-system-info.jpg)
+
+Graphics/Displays, with the chip's GPU and each display:
+
+![System info: Graphics/Displays](images/system-info-graphics.jpg)
+
 ## About and license
 
 Task Manager › About Task Manager shows the version, build and the changes in this build.
@@ -252,7 +264,14 @@ License… shows the full license and when you accepted it. The first launch ask
 
 ![License](images/about-license.jpg)
 
-## New in 1.2 to 1.7
+## New in 1.2 to 1.8
+
+### System info (1.8)
+
+A new Advanced page, like TMOG's System Info: everything Apple's System Information app shows, searchable and
+exportable. See [System info](#system-info) above.
+
+![Advanced: System info](images/advanced-system-info.jpg)
 
 ### Installed apps (1.7)
 

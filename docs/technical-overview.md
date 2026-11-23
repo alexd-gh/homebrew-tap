@@ -93,6 +93,7 @@ rights, other users' and system processes show "—" in those columns.
 | Disk space | A parallel scan of the volume's folders, keeping the largest files of each folder and summing the rest so very large disks stay responsive; drawn as a squarified treemap and grouped into file categories |
 | Power and frequency | **Undocumented**: the System Management Controller (SMC) for fans and system power, HID sensors for temperatures, and IOReport for energy, arranged as a tree with each reading's minimum and maximum since launch |
 | Apple silicon | The CPU cluster layout from the device tree, GPU performance states with their frequencies and voltages, energy per chip block from the Energy Model, and media engine (scaler, JPEG) activity counters |
+| System info | `system_profiler`'s plain-text report for each System Information category (read when you open it, kept until Reload; Wi-Fi, Applications, Frameworks and Fonts take a few seconds). The text report is used rather than JSON because it carries macOS's own labels |
 | Installed apps | App bundles in `/Applications`, `~/Applications` and `/System/Applications` (two folder levels deep), each one's `Info.plist`, last-opened date from Spotlight and size on disk (measured in the background). Related files are entries in `~/Library` and `/Library` folders named by the app's bundle ID, or by its exact name in Application Support, Caches and Logs (never for Apple's apps); read only for the selected app, with its code signature |
 
 Undocumented interfaces are looked up at run time. If one is missing or changes in a macOS update, the reading that
@@ -112,7 +113,7 @@ depends on it shows "—" or is hidden; the rest of the app keeps working.
 | Start / stop / restart service | Asks launchd to start, stop or restart the service |
 | Run new task | Opens an app, file, folder or web address; anything else runs as a shell command in the background. Ticking "Create this task with administrative privileges" runs program files and commands as root, with their output in `~/Library/Logs/Task Manager/Run as administrator.log`; in the administrator copy everything else opens as you |
 | Search online | Opens a web search for the process name in your browser |
-| Uninstall (Installed apps) | Quits the app if it's running (waiting up to 10 seconds), then moves the app and the related files you ticked to the Trash through Finder's own Move to Trash, which asks for an administrator password when an item needs one. macOS's own apps and Task Manager itself can't be uninstalled |
+| Uninstall (Installed apps) | Quits the app if it's running (waiting up to 10 seconds), then moves the app to the Trash on its own and, only once that worked, the related files you ticked. macOS doesn't ask for a password here: an app owned by an administrator or another user is refused, and Task Manager says to drag it to the Trash in Finder. macOS's own apps and Task Manager itself can't be uninstalled |
 
 ## Administrator rights
 
@@ -123,7 +124,8 @@ Task Manager runs as you. Two things need more:
   administrator password dialog. Task Manager never sees or stores your password.
 - **Restart as administrator** (File menu) starts a second copy as root, after you authenticate, and closes the
   first. Before that it checks that the app's program file is still the code that's running, and the root shell
-  checks its code signature hash again just before starting it. Your current settings are handed over to it (they
+  checks its code signature hash again just before starting it (for the architecture that's running; in 1.6 and 1.7
+  this check failed on the universal app, so Restart as administrator didn't work). Your current settings are handed over to it (they
   replace any root saved earlier), so it looks the same, but changes you make while elevated aren't saved, because
   root has its own preferences. Disk space's Move to Trash and Installed apps' Uninstall are off in the administrator copy.
 
@@ -174,7 +176,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.7); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.8); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 
@@ -193,4 +195,4 @@ Checksums for each download are in the cask (`sha256`), and Homebrew checks them
 | Services (Windows services) | launchd agents and daemons | — |
 | Run as administrator | Restart as administrator | — |
 | GPU engines | Overall, 3D and tiler | macOS doesn't report Copy or Video engines |
-| — | Advanced pages | Drivers, Connections, Disk space, Power and frequency, Apple silicon, Installed apps |
+| — | Advanced pages | Drivers, Connections, Disk space, Power and frequency, Apple silicon, Installed apps, System info |

@@ -3,6 +3,16 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.8 — 23 November 2026 (build 61)
+
+- **System info**, a new Advanced page (⌥⌘7) modelled on TMOG's System Info: the full report of Apple's System
+  Information app (Hardware, Network and Software) with macOS's own labels; long lists folded and sorted, search,
+  Copy and Save as text….
+- **Restart as administrator works again.** Its check that the program file hadn't changed always failed on the
+  universal app in 1.6 and 1.7.
+- **Safer Uninstall:** the app goes to the Trash first and its Library files only after that; apps owned by an
+  administrator or another user say so and point to Finder.
+
 ## 1.7 — 23 November 2026 (build 58)
 
 - **Installed apps**, a new Advanced page (⌥⌘6) modelled on TMOG's Installed Apps: every app in Applications,
