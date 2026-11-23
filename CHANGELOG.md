@@ -3,6 +3,29 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.6 — 23 November 2026 (build 56)
+
+A safety and reliability release.
+
+- **Safer End task.** Ending WindowServer, loginwindow or another critical system process now asks first, as Windows
+  does. End task, Force quit, priority and Efficiency mode check that the process is still the one you picked, so a
+  reused process ID is left alone. End process tree won't touch launchd.
+- **Trustworthy publishers.** "Apple Inc." and the Apple driver vendor now come only from Apple's own signature;
+  code changed after signing shows "Invalid signature". Signatures are checked in the background, so large apps no
+  longer slow a refresh.
+- **Safer Restart as administrator.** Task Manager checks that its program file is still the running code before
+  starting the administrator copy, and the app is signed with the hardened runtime. In the administrator copy, Run
+  new task opens things as you unless the administrator box is ticked; commands run as administrator report a
+  failed password prompt and write their output to `~/Library/Logs/Task Manager`. Settings handed over always apply,
+  and Move to Trash is off while elevated.
+- **Connections:** at most four host-name lookups at a time, and a new **Look up host names** switch.
+- **Disk space** scans use far less memory (about 170 MB instead of 1.1 GB for ~/Library), refuse to trash an item
+  replaced since the scan, and no longer hide files from a similarly named folder in Largest files.
+- **Fixed:** a hung helper command could freeze the Network column or a page; fast network links could under-report;
+  the Power and frequency and Apple silicon pages could leak sensor connections on redraws; an odd fan count could
+  crash Power and frequency; app history that couldn't be read was overwritten. The battery log is now read only
+  while Performance is open, and Services re-reads launchd files only when they change.
+
 ## 1.5 — 21 November 2026 (build 54)
 
 - **Core kinds on the CPU page.** Performance › CPU › Logical processors tags each graph with its core kind

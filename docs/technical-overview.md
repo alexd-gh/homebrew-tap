@@ -101,15 +101,15 @@ depends on it shows "—" or is hidden; the rest of the app keeps working.
 
 | Action | What happens |
 |---|---|
-| End task | Asks an app to quit the normal way, as quitting from the Dock does; for other processes, sends the terminate signal (`SIGTERM`) |
-| Force quit / End process tree | Sends the kill signal (`SIGKILL`) to the process, or to it and all its descendants |
+| End task | Asks an app to quit the normal way, as quitting from the Dock does; for other processes, sends the terminate signal (`SIGTERM`). Every process action first checks the process's start time, so a process ID that macOS has since reused is left alone. Critical system processes (WindowServer, loginwindow, launchd and similar, or any root system process while elevated) ask first |
+| Force quit / End process tree | Sends the kill signal (`SIGKILL`) to the process, or to it and all its descendants. End process tree refuses launchd, whose tree is every process |
 | Restart (Finder, Dock and similar) | Ends the process; macOS starts it again on its own |
 | Efficiency mode | Puts the process into macOS's background policy, the same as `taskpolicy -b`: efficiency cores only and throttled disk and network. Your own processes only |
 | Set priority | Changes the process's scheduling priority (nice value); raising it needs root |
 | Create process sample | macOS's `sample` tool records the process's call stacks for a few seconds, the Mac equivalent of Windows' "Create dump file" |
 | Enable / disable startup item | Changes launchd's enabled state for that agent or daemon; takes effect at the next sign-in or restart |
 | Start / stop / restart service | Asks launchd to start, stop or restart the service |
-| Run new task | Opens an app, file, folder or web address; anything else runs as a shell command in the background, as root if you tick "Create this task with administrative privileges" |
+| Run new task | Opens an app, file, folder or web address; anything else runs as a shell command in the background. Ticking "Create this task with administrative privileges" runs program files and commands as root, with their output in `~/Library/Logs/Task Manager/Run as administrator.log`; in the administrator copy everything else opens as you |
 | Search online | Opens a web search for the process name in your browser |
 
 ## Administrator rights
@@ -120,8 +120,10 @@ Task Manager runs as you. Two things need more:
   If Touch ID for `sudo` is set up on your Mac, you approve it with Touch ID; otherwise macOS shows its standard
   administrator password dialog. Task Manager never sees or stores your password.
 - **Restart as administrator** (File menu) starts a second copy as root, after you authenticate, and closes the
-  first. Your current settings are handed over to it, so it looks the same, but changes you make while elevated
-  aren't saved, because root has its own preferences.
+  first. Before that it checks that the app's program file is still the code that's running, and the root shell
+  checks its code signature hash again just before starting it. Your current settings are handed over to it (they
+  replace any root saved earlier), so it looks the same, but changes you make while elevated aren't saved, because
+  root has its own preferences. Disk space's Move to Trash is off in the administrator copy.
 
 ## Background pieces
 
@@ -141,10 +143,10 @@ Both login items appear in System Settings › General › Login Items and switc
 |---|---|---|
 | Settings, license acceptance, startup-item disable dates, disk scan history | `~/Library/Preferences/local.alexd-gh.wintaskmanager.plist` (`local.alexander.wintaskmanager.plist` before 1.2) | Until you change or delete them |
 | App history (daily totals per app) | `~/Library/Application Support/Task Manager/` | 30 days, saved every minute and on quit |
-| Process samples | `~/Library/Logs/Task Manager/` | Until you delete them |
+| Process samples, output of commands run as administrator | `~/Library/Logs/Task Manager/` | Until you delete them |
 
 Nothing is sent anywhere. The only network traffic Task Manager causes itself is reverse DNS lookups for remote
-hosts on the Connections page.
+hosts on the Connections page, which you can switch off there (Look up host names).
 
 ## Performance cost
 
@@ -155,7 +157,9 @@ Task Manager is meant to stay out of the way of what it measures:
   hover, an open Properties tab or a search.
 - Per-process network uses one `nettop` snapshot every ~5 seconds. A continuous `nettop` stream was measured at
   about 1.5 CPU cores and is deliberately not used; the trade-off is that very short-lived processes can be missed.
-- Code-signature checks and reverse DNS lookups are cached, so each is done once per program or host.
+- Code-signature checks run on a background queue and are cached per program file (read again when the file
+  changes); reverse DNS lookups run at most four at a time and the latest 4,096 hosts are cached.
+- Every helper command (`nettop`, `launchctl`, `pmset`, …) has a time limit, so a hung one can't stall a page.
 - Graph motion in Extended graphs is done by Core Animation between samples, so the app does no work between
   samples for it.
 - Paused update speed stops the sampling loop.
@@ -166,9 +170,9 @@ Task Manager is meant to stay out of the way of what it measures:
 |---|---|
 | Download | A ZIP of `Task Manager.app` on this repository's releases; the cask installs it to `/Applications` |
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
-| Signing | Ad-hoc signed, not notarized, so the first launch needs **Open Anyway** |
+| Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.5); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.6); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

@@ -1,12 +1,12 @@
 # Screenshots
 
-A tour of every page in Task Manager for Mac, taken with 1.1 and with 1.2 – 1.5 for what they added, taken on a MacBook Pro with an M4 Max in dark mode.
+A tour of every page in Task Manager for Mac, taken with 1.1 and with 1.2 – 1.6 for what they added, taken on a MacBook Pro with an M4 Max in dark mode.
 Personal details (account names, IP addresses, the battery serial number and some installed security software)
 are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.5](#new-in-12-to-15)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.6](#new-in-12-to-16)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -202,7 +202,8 @@ and vendor.
 ### Connections
 
 Every open connection by app, with state, local and remote endpoints and traffic, filtered by connected, listening,
-open to the network, UDP or this Mac.
+open to the network, UDP or this Mac. Remote hosts with a name show it under the address; untick **Look up host
+names** to stop the lookups.
 
 ![Advanced: Connections](images/advanced-connections.jpg)
 
@@ -237,7 +238,24 @@ License… shows the full license and when you accepted it. The first launch ask
 
 ![License](images/about-license.jpg)
 
-## New in 1.2 to 1.5
+## New in 1.2 to 1.6
+
+### Confirm before ending a system process (1.6)
+
+Ending WindowServer, loginwindow, watchdogd or another process macOS can't run without now asks first and says what
+will happen. Processes Task Manager couldn't end anyway (another user's, without administrator rights) get the usual
+"Access is denied" instead.
+
+![End this system process?](images/end-system-process.jpg)
+
+### Look up host names (1.6)
+
+Advanced › Connections shows remote host names under the address and in the details pane (here a speed-test
+download). The new **Look up host names** switch turns the reverse DNS lookups off; at most four run at a time.
+
+![Advanced › Connections with host names](images/advanced-connections.jpg)
+
+![Extended graphs: Connections](images/extended-advanced-connections.jpg)
 
 ### Core kinds on the CPU page (1.5)
 

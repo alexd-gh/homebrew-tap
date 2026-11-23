@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.5** (build 54), 21 November 2026 ([what's new](#whats-new-in-15)) |
+| Latest version | **1.6** (build 56), 23 November 2026 ([what's new](#whats-new-in-16)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-15) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-16) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -53,23 +53,37 @@ unzip it and drag **Task Manager** to Applications.
    continues and is remembered; **Quit** (or Escape) closes the app. You're asked again only if the license terms
    change. The text is always available under Task Manager › About Task Manager › License….
 
-## What's new in 1.5
+## What's new in 1.6
 
-**Core kinds on the CPU page.** With one graph per logical processor, each graph says what kind of core it is
-("E · CPU 0" for efficiency, "P · CPU 4" for performance), efficiency cores get a teal frame, and a line under the
-graphs lists which CPUs are which.
+A safety and reliability release.
 
-![Performance › CPU with core kinds](docs/images/performance-cpu-cores.jpg)
+**Safer End task.** Ending WindowServer, loginwindow or another critical system process now asks first, as Windows
+does. End task, priority and Efficiency mode check that the process is still the one you picked, so a reused process
+ID is left alone, and End process tree won't touch launchd.
 
-**Memory graph by type.** Right-click the memory graph › Change graph to › Composition to stack App memory, Wired,
-Compressed and Cached in the composition bar's colours, with the "in use" line on top. Hover it for the split at any
-moment in the last 60 seconds. It's off by default and remembered once you switch it on.
+![End this system process? confirmation](docs/images/end-system-process.jpg)
 
-![Performance › Memory split by type](docs/images/performance-memory-composition.jpg)
+**Trustworthy publishers.** "Apple Inc." and the Apple driver vendor now come only from Apple's own signature; code
+that was changed after signing shows "Invalid signature". Signatures are checked in the background, so large apps
+no longer slow a refresh.
 
-Earlier releases added open handles per process (Properties › Network and Files, Find open file or port, and Handles,
-Files, Sockets and Pipes columns in Details), double-click-to-fill-the-screen and background Disk space scans. Every
-change is in the [release history](CHANGELOG.md), with pictures in the [screenshot tour](docs/screenshots.md#new-in-12-to-15).
+**Safer Restart as administrator.** Task Manager checks that its program file is still the code that's running before
+starting the administrator copy, and the app is now signed with the hardened runtime. In the administrator copy, Run
+new task opens things as you unless you tick the administrator box, and commands run as administrator write their
+output to `~/Library/Logs/Task Manager`. Settings you change before restarting always carry over, and Disk space's
+Move to Trash is off while elevated.
+
+**Connections** looks up at most four host names at a time, and a new **Look up host names** switch turns the lookups
+off.
+
+![Advanced › Connections with the Look up host names switch](docs/images/advanced-connections.jpg)
+
+Also: Disk space scans use far less memory (about 170 MB instead of 1.1 GB for ~/Library), helper commands can't hang
+a page, network speeds stay right on fast links, and the battery log is read only while Performance is open.
+
+1.5 added core kinds on the CPU page and a memory graph split by type; earlier releases added open handles per
+process, Find open file or port, double-click-to-fill-the-screen and background Disk space scans. Every change is in
+the [release history](CHANGELOG.md), with pictures in the [screenshot tour](docs/screenshots.md#new-in-12-to-16).
 
 ## Features
 
@@ -109,6 +123,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 - **Extended graphs**: an optional graph style with smooth glowing curves coloured by level and LED meters.
 - **Show advanced readings**: CPU clock speed, Neural Engine (NPU) power, temperatures and "Not responding" status.
 - **Restart as administrator** (File menu) to see CPU, memory and disk for other users' and root's processes.
+  Ending a critical system process asks first.
 - **Control-Shift-Escape** brings Task Manager forward and, if you switch it on, also opens it when it isn't running.
 - **One copy only**, as on Windows: launching it again brings the running window forward.
 - **Light and dark app icon**; on macOS 26 and later the Dock and Finder switch with dark mode.
@@ -206,7 +221,7 @@ and keeps what it records on your Mac.
 | Administrator password or Touch ID | Only when you disable a system startup item, control a system service or restart as administrator | These change system-wide settings or need root |
 | Location | Only if you allow it, for the Performance page's Wi-Fi tile | macOS shows the Wi-Fi network name only to apps with Location access. Your location itself is never read |
 | Login items | Only if you switch on Open at login or Control-Shift-Escape when closed | Registers the app, or its small hotkey helper, as a login item; switch it off in Settings |
-| Network | Only on the Advanced › Connections page | Looks up the names of remote hosts you're already connected to (reverse DNS). **Search online** opens your web browser |
+| Network | Only on the Advanced › Connections page | Looks up the names of remote hosts you're already connected to (reverse DNS); switch it off with **Look up host names**. **Search online** opens your web browser |
 
 **Files it writes:**
 
@@ -214,7 +229,7 @@ and keeps what it records on your Mac.
 |---|---|
 | `~/Library/Preferences/local.alexd-gh.wintaskmanager.plist` | Settings, license acceptance, startup-item disable dates, disk scan history |
 | `~/Library/Application Support/Task Manager/` | App history (30 days; older days are deleted) |
-| `~/Library/Logs/Task Manager/` | Process samples you create |
+| `~/Library/Logs/Task Manager/` | Process samples you create, and the output of commands run as administrator |
 
 `brew uninstall --zap` deletes all three, and the settings file of versions before 1.2
 (`local.alexander.wintaskmanager.plist`).
