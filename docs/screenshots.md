@@ -1,12 +1,12 @@
 # Screenshots
 
-A tour of every page in Task Manager for Mac 1.1, taken on a MacBook Pro with an M4 Max in dark mode.
+A tour of every page in Task Manager for Mac, taken with 1.1 and with 1.2 – 1.5 for what they added, taken on a MacBook Pro with an M4 Max in dark mode.
 Personal details (account names, IP addresses, the battery serial number and some installed security software)
 are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.5](#new-in-12-to-15)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -236,3 +236,49 @@ Task Manager › About Task Manager shows the version, build and the changes in 
 License… shows the full license and when you accepted it. The first launch asks you to accept the same text.
 
 ![License](images/about-license.jpg)
+
+## New in 1.2 to 1.5
+
+### Core kinds on the CPU page (1.5)
+
+Right-click the CPU graph › Change graph to › Logical processors. Each graph names its core: "E · CPU 0" is an
+efficiency core, framed in teal; "P · CPU 4" is a performance core. The line under the graphs says which CPUs are
+which.
+
+![Performance › CPU: logical processors tagged E and P](images/performance-cpu-cores.jpg)
+
+### Memory graph by type (1.5)
+
+Right-click the memory graph › Change graph to › Composition. App memory, Wired, Compressed and Cached are stacked
+in the composition bar's colours, with the "in use" line on top; hover the graph for the split at any moment in the
+last 60 seconds.
+
+![Performance › Memory split by type](images/performance-memory-composition.jpg)
+
+With Extended graphs the bands are smooth glowing curves that slide between samples, and the "in use" line keeps its
+colour-by-level glow.
+
+![Extended graphs: Memory split by type](images/extended-performance-memory-composition.jpg)
+
+### Open handles (1.2, 1.4)
+
+Properties (⌘I on Details, or right-click › Properties) has a **Network** tab: every socket the process has open,
+with protocol, local and remote address, state and traffic. With Advanced pages on, Show in
+Connections opens Advanced › Connections filtered to this process.
+
+![Properties › Network](images/properties-network.jpg)
+
+The **Files** tab lists every open file, folder, device, pipe and socket with its access and size, filtered by kind.
+Here most paths are inside the user's home folder, so they're covered.
+
+![Properties › Files](images/properties-files.jpg)
+
+Details shows how many handles each process has (Handles and Sockets by default; Files and Pipes from the column
+menu), and hovering a count splits it by kind.
+
+### Find open file or port (1.2)
+
+Edit › Find open file or port… (⇧⌘O) answers "what's using this?": type or drop a file, a folder or a volume, or
+switch to Port and type a port number. Go to process selects the match in Details.
+
+![Find open file or port](images/find-open-file.jpg)

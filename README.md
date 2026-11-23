@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.1** (build 37), 20 November 2026 |
+| Latest version | **1.5** (build 54), 21 November 2026 ([what's new](#whats-new-in-15)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-15) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -53,6 +53,24 @@ unzip it and drag **Task Manager** to Applications.
    continues and is remembered; **Quit** (or Escape) closes the app. You're asked again only if the license terms
    change. The text is always available under Task Manager › About Task Manager › License….
 
+## What's new in 1.5
+
+**Core kinds on the CPU page.** With one graph per logical processor, each graph says what kind of core it is
+("E · CPU 0" for efficiency, "P · CPU 4" for performance), efficiency cores get a teal frame, and a line under the
+graphs lists which CPUs are which.
+
+![Performance › CPU with core kinds](docs/images/performance-cpu-cores.jpg)
+
+**Memory graph by type.** Right-click the memory graph › Change graph to › Composition to stack App memory, Wired,
+Compressed and Cached in the composition bar's colours, with the "in use" line on top. Hover it for the split at any
+moment in the last 60 seconds. It's off by default and remembered once you switch it on.
+
+![Performance › Memory split by type](docs/images/performance-memory-composition.jpg)
+
+Earlier releases added open handles per process (Properties › Network and Files, Find open file or port, and Handles,
+Files, Sockets and Pipes columns in Details), double-click-to-fill-the-screen and background Disk space scans. Every
+change is in the [release history](CHANGELOG.md), with pictures in the [screenshot tour](docs/screenshots.md#new-in-12-to-15).
+
 ## Features
 
 ### Pages
@@ -60,11 +78,11 @@ unzip it and drag **Task Manager** to Applications.
 | Page | What it shows | What you can do |
 |---|---|---|
 | **Processes** | Apps (with their helpers nested), background processes and macOS processes; CPU, memory, disk, network and GPU as a heat map with totals in the header; power usage and its trend (Very low … Very high) | End task, force quit, efficiency mode, switch to, create a process sample, open file location, search online, properties; choose columns by right-clicking the header |
-| **Performance** | CPU (overall or per core), memory, one tile per disk, each Wi-Fi and Ethernet adapter, GPU (3D and tiler), and battery on Macs that have one; 60 seconds of history each | Copy a summary, graph summary view, network details |
+| **Performance** | CPU (overall or per core, each core tagged efficiency or performance), memory (in use, or split by type), one tile per disk, each Wi-Fi and Ethernet adapter, GPU (3D and tiler), and battery on Macs that have one; 60 seconds of history each | Copy a summary, graph summary view, network details |
 | **App history** | CPU time, network and energy per app over the last 30 days, recorded while Task Manager runs | Delete usage history |
 | **Startup apps** | Launch agents and daemons with publisher, status, whether running now, when disabled, type and command | Enable or disable, properties, open file location |
 | **Users** | Each signed-in user, including remote sessions, plus grouped system accounts | Process actions, sign out |
-| **Details** | Every process, with optional columns such as architecture, CPU time, peak memory, disk read/written, GPU, elevated, parent PID and start time | End task or process tree, set priority, efficiency mode, process sample, properties |
+| **Details** | Every process, with open handles split into files, sockets and pipes (hover for the breakdown), and optional columns such as architecture, CPU time, peak memory, disk read/written, GPU, elevated, parent PID and start time | End task or process tree, set priority, efficiency mode, process sample, properties with Network and Files tabs |
 | **Services** | launchd services: your agents (User) and system daemons (System), with PID, description and state | Start, stop, restart |
 | **Settings** | Theme, start page, update speed, open at login, always on top, menu bar icon, hide when minimized, Control-Shift-Escape, graph style, advanced readings and pages | — |
 
@@ -76,12 +94,17 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 |---|---|
 | **Drivers** | Loaded kernel extensions, installed kernel and driver extensions, and system extensions |
 | **Connections** | Every open network connection by process, with remote host names, service names and traffic, plus a Firewall settings shortcut |
-| **Disk space** | A scan of a volume as a treemap and folder list, with file categories and a history of earlier scans |
+| **Disk space** | A scan of a volume as a treemap and folder list, with file categories and a history of earlier scans; a scan keeps running while you use other pages |
 | **Power and frequency** | Power, voltage, current, temperature and fan sensors as a tree, with live values and their minimum and maximum |
 | **Apple silicon** | The CPU cluster layout, GPU performance states with their frequencies and voltages, energy per chip block, and media engine activity |
 
 ### Also
 
+- **Find open file or port** (Edit menu, ⇧⌘O): which processes hold a file, folder, volume or network port open.
+- **Open handles** per process: Properties › Network shows live sockets with state and traffic, Properties › Files
+  every open file, folder, device and pipe.
+- **Double-click the title row** to fill the screen, leaving the menu bar and Dock visible, as maximizing does on
+  Windows.
 - **Menu bar icon** with live CPU use, a floating **graph summary** window and a compact **Fewer details** window.
 - **Extended graphs**: an optional graph style with smooth glowing curves coloured by level and LED meters.
 - **Show advanced readings**: CPU clock speed, Neural Engine (NPU) power, temperatures and "Not responding" status.
@@ -100,7 +123,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | ⌘E | Efficiency mode | ⌘I | Properties (Details) |
 | ⇧⌘C | Copy summary | ⌥⌘D | Fewer details |
 | ⌥⌘G | Graph summary view | ⌥⌘T | Always on top |
-| ⌃⇧⎋ | Show Task Manager | | |
+| ⇧⌘O | Find open file or port | ⌃⇧⎋ | Show Task Manager |
 
 ## Screenshots
 
@@ -189,11 +212,12 @@ and keeps what it records on your Mac.
 
 | Location | Contents |
 |---|---|
-| `~/Library/Preferences/local.alexander.wintaskmanager.plist` | Settings, license acceptance, startup-item disable dates, disk scan history |
+| `~/Library/Preferences/local.alexd-gh.wintaskmanager.plist` | Settings, license acceptance, startup-item disable dates, disk scan history |
 | `~/Library/Application Support/Task Manager/` | App history (30 days; older days are deleted) |
 | `~/Library/Logs/Task Manager/` | Process samples you create |
 
-`brew uninstall --zap` deletes all three.
+`brew uninstall --zap` deletes all three, and the settings file of versions before 1.2
+(`local.alexander.wintaskmanager.plist`).
 
 ## Known limits
 
@@ -202,6 +226,8 @@ These are macOS rules, not bugs.
 - **Other users' and root processes** show "—" for CPU, memory, disk and power until you restart as administrator.
   Efficiency mode works only on your own processes.
 - **Per-process network** updates about every 5 seconds and can miss processes that live shorter than that.
+- **Open handles** (Handles columns, Network and Files tabs, Find open file or port) are readable only for your own
+  processes until you restart as administrator; Find says how many processes it couldn't search.
 - **CPU speed** on Apple silicon needs Show advanced readings; otherwise "Load average" stands in for "Speed".
 - **GPU** shows overall, 3D and tiler use. macOS has no Copy or Video engine breakdown, GPU temperature or driver version.
 - **Startup changes** take effect at the next sign-in or restart.

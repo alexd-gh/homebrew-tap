@@ -52,6 +52,9 @@ by default.
 | Apps vs background processes | Whether a process is a running app with a Dock presence (AppKit's list of running apps); helpers are nested under their app |
 | Publisher, sandbox ("isolation") | The code signature of the executable (Security framework) |
 | Architecture | Whether a process runs natively or under Rosetta 2 |
+| Handles, Files, Sockets, Pipes | Each process's open file descriptors from `libproc`, counted by kind every sample; the hover breakdown asks for each handle's details (file, folder, device, TCP, UDP, local socket, pipe, event queue) |
+| Properties › Network and Files | The full handle list, refreshed every 2 seconds: sockets with state and endpoints (byte counts from the `nettop` snapshots), files with their path and access mode, and the process at the other end of each pipe |
+| Find open file or port | Walks the handles of every process you can read and matches a path (a file, a folder and what's inside it, or a whole volume) or a port number |
 | Signed-in users and sessions | The login records (`utmpx`), including remote sessions |
 | Not responding | **Undocumented**: the window server's own "app is unresponsive" check, the same one that turns the cursor into a spinner |
 
@@ -62,10 +65,10 @@ rights, other users' and system processes show "—" in those columns.
 
 | Tile | Source |
 |---|---|
-| CPU, per-core graphs | Mach host processor statistics (per-core user, system and idle ticks) |
-| Threads, processes, open files, uptime, load average | Kernel counters (`sysctl`) |
+| CPU, per-core graphs | Mach host processor statistics (per-core user, system and idle ticks). Each core's kind (efficiency or performance) comes from the CPU cluster layout in the device tree |
+| Threads, processes, handles, uptime, load average | Kernel counters (`sysctl`); the Handles hover adds up every readable process's handles by kind |
 | CPU speed (Apple silicon) | **Undocumented**: the IOReport performance-state residencies per cluster, weighted by each state's frequency. Without Show advanced readings, "Load average" stands in |
-| Memory | Mach virtual memory statistics (app, wired, compressed, cached, free) and swap usage; memory type and maker from the hardware registry |
+| Memory | Mach virtual memory statistics (app, wired, compressed, cached, free) and swap usage; memory type and maker from the hardware registry. "In use" is app + wired + compressed; the Composition graph keeps 60 seconds of each type |
 | Disks | One tile per physical drive from IOKit block storage drivers (bytes and operations read/written, busy time), with the volumes on each drive and their capacity |
 | Wi-Fi and Ethernet | Interface byte counters and addresses (`getifaddrs`), adapter names and types from System Configuration, and Wi-Fi details (signal, noise, channel, security, PHY mode) from CoreWLAN. The network name needs Location access because macOS requires it |
 | GPU | Utilization (overall, renderer/3D, tiler) and memory in use from the GPU driver's performance statistics in the IOKit registry |
@@ -136,7 +139,7 @@ Both login items appear in System Settings › General › Login Items and switc
 
 | What | Where | Kept for |
 |---|---|---|
-| Settings, license acceptance, startup-item disable dates, disk scan history | `~/Library/Preferences/local.alexander.wintaskmanager.plist` | Until you change or delete them |
+| Settings, license acceptance, startup-item disable dates, disk scan history | `~/Library/Preferences/local.alexd-gh.wintaskmanager.plist` (`local.alexander.wintaskmanager.plist` before 1.2) | Until you change or delete them |
 | App history (daily totals per app) | `~/Library/Application Support/Task Manager/` | 30 days, saved every minute and on quit |
 | Process samples | `~/Library/Logs/Task Manager/` | Until you delete them |
 
@@ -148,6 +151,8 @@ hosts on the Connections page.
 Task Manager is meant to stay out of the way of what it measures:
 
 - One sample per update interval reads the whole process table at once rather than process by process.
+- Open handles are counted with one call per process each sample; the per-handle details are read only for a
+  hover, an open Properties tab or a search.
 - Per-process network uses one `nettop` snapshot every ~5 seconds. A continuous `nettop` stream was measured at
   about 1.5 CPU cores and is deliberately not used; the trade-off is that very short-lived processes can be missed.
 - Code-signature checks and reverse DNS lookups are cached, so each is done once per program or host.
@@ -162,8 +167,8 @@ Task Manager is meant to stay out of the way of what it measures:
 | Download | A ZIP of `Task Manager.app` on this repository's releases; the cask installs it to `/Applications` |
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed, not notarized, so the first launch needs **Open Anyway** |
-| Bundle identifiers | `local.alexander.wintaskmanager` (app), `local.alexander.wintaskmanager.hotkey` (hotkey helper) |
-| Version and build | Version is the release (1.1); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
+| Version and build | Version is the release (1.5); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

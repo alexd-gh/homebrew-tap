@@ -3,6 +3,47 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.5 — 21 November 2026 (build 54)
+
+- **Core kinds on the CPU page.** Performance › CPU › Logical processors tags each graph with its core kind
+  ("E · CPU 0", "P · CPU 4"), frames efficiency cores in teal and explains the letters under the graphs, so you can
+  see which cores macOS is using. Intel Macs show plain "CPU n" tags.
+- **Memory graph by type.** Right-click the graph on Performance › Memory › Change graph to › Composition to see App
+  memory, Wired, Compressed and Cached stacked in the composition bar's colours, with the "in use" line on top. Hover
+  it for the split at any moment in the last 60 seconds. Off by default; your choice is remembered. With Extended
+  graphs it slides smoothly between samples like the other graphs.
+
+## 1.4 — 21 November 2026 (build 50)
+
+- **Handles by type in Details.** Handles and Sockets columns now show by default, and new Files and Pipes columns
+  can be turned on from the column menu. Hover a Handles count to split it into files, folders, devices,
+  TCP/UDP/local sockets, pipes and event queues; hovering Handles on Performance › CPU does the same for every
+  process you can read.
+- **Fixed:** dragging a window onto another screen could still make it jump away from the cursor. Drag the title
+  row, the strip above Fewer details, or anywhere on the Summary window.
+
+## 1.3 — 21 November 2026 (build 46)
+
+- **Double-click the title row to fill the screen**, leaving the menu bar and Dock visible, like maximizing on
+  Windows; double-click again to restore. It follows System Settings › Desktop & Dock.
+- **Disk space scans keep running** while you look at other pages, and their result is there when you come back. The
+  sidebar shows a spinner while a scan runs and a dot when it finished unseen.
+- **Fixed:** dragging the main or Summary window onto another screen could make it jump away from the cursor.
+
+## 1.2 — 20 November 2026 (build 42)
+
+- **Open handles for each process.** Properties has new Network and Files tabs (live sockets with state and bytes;
+  every open file, folder, device, pipe and socket with its access), the right-click menus have Network
+  connections… and Open files…, and Edit › Find open file or port… (⇧⌘O) finds which processes hold a file, folder,
+  volume or port. Performance › CPU calls open files Handles, as Windows does.
+- **Lower CPU use:** the network reader no longer runs `nettop` many times a second on macOS 27, which cost about a
+  third of a CPU core and leaked open handles.
+- **Menu bar menu** no longer jumps its highlight or changes size while open; its readings still update live.
+- **Fixed:** Go to details scrolled the Details table sideways, away from its column headers.
+- **Fixed:** Help › Task Manager on GitHub now opens this tap instead of a page you couldn't see.
+- **New app identifier** `local.alexd-gh.wintaskmanager`. Settings saved under the old one are copied over on first
+  launch.
+
 ## 1.1 — 20 November 2026 (build 37)
 
 - **About window** (Task Manager › About Task Manager, also Help › What's New): version, build number, build date,
