@@ -273,8 +273,11 @@ Here most paths are inside the user's home folder, so they're covered.
 
 ![Properties › Files](images/properties-files.jpg)
 
-Details shows how many handles each process has (Handles and Sockets by default; Files and Pipes from the column
-menu), and hovering a count splits it by kind.
+Details shows how many handles each process has: Handles and Sockets by default, Files and Pipes from the column
+menu (right-click any column header). Hovering a count splits it into files, folders, devices, sockets, pipes and
+event queues. Here the table is sorted by Handles, with only the handle columns showing.
+
+![Details: handles per process](images/details-handles.jpg)
 
 ### Find open file or port (1.2)
 
