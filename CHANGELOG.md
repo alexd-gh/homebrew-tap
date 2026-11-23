@@ -3,6 +3,16 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.7 — 23 November 2026 (build 58)
+
+- **Installed apps**, a new Advanced page (⌥⌘6) modelled on TMOG's Installed Apps: every app in Applications,
+  `~/Applications` and macOS's own apps, with version, size and when you last opened it; filters for third-party,
+  App Store, Apple, running and unused apps; search by name or bundle ID.
+- The selected app shows its publisher, source and the files it keeps in Library (containers, caches, preferences,
+  saved state, web data, launch agents and more), with sizes.
+- **Uninstall…** quits the app and moves it and the files you tick to the Trash. Files found only by name start
+  unticked; macOS's own apps can't be removed; off while running as administrator.
+
 ## 1.6 — 23 November 2026 (build 56)
 
 A safety and reliability release.

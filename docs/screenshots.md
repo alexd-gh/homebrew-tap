@@ -1,12 +1,12 @@
 # Screenshots
 
-A tour of every page in Task Manager for Mac, taken with 1.1 and with 1.2 – 1.6 for what they added, taken on a MacBook Pro with an M4 Max in dark mode.
+A tour of every page in Task Manager for Mac, taken with 1.1 and with 1.2 – 1.7 for what they added, taken on a MacBook Pro with an M4 Max in dark mode.
 Personal details (account names, IP addresses, the battery serial number and some installed security software)
 are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.6](#new-in-12-to-16)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.7](#new-in-12-to-17)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -188,6 +188,10 @@ Power and frequency adds a Level column with an LED meter for every sensor.
 
 ![Extended graphs: Apple silicon](images/extended-advanced-apple-silicon.jpg)
 
+Installed apps lights a green LED next to running apps (here ChatGPT, with its caches and logs).
+
+![Extended graphs: Installed apps](images/extended-advanced-installed-apps.jpg)
+
 ## Advanced pages
 
 Switched on in Settings › Advanced pages, a new sidebar section adds pages Windows Task Manager doesn't have.
@@ -228,6 +232,16 @@ and power per block.
 
 ![Advanced: Apple silicon](images/advanced-apple-silicon.jpg)
 
+### Installed apps
+
+Every app on the Mac with its version, when you last opened it and its size, filtered by third-party, App Store,
+Apple, running or unused. The selected app (here IINA) shows its publisher, source and the files it keeps in
+Library. Uninstall… lists the app and those files with a box each and moves the ticked ones to the Trash.
+
+![Advanced: Installed apps](images/advanced-installed-apps.jpg)
+
+![Uninstall IINA?](images/installed-apps-uninstall.jpg)
+
 ## About and license
 
 Task Manager › About Task Manager shows the version, build and the changes in this build.
@@ -238,7 +252,14 @@ License… shows the full license and when you accepted it. The first launch ask
 
 ![License](images/about-license.jpg)
 
-## New in 1.2 to 1.6
+## New in 1.2 to 1.7
+
+### Installed apps (1.7)
+
+A new Advanced page, like TMOG's Installed Apps: sizes, last-opened dates and related Library files for every app,
+and Uninstall to the Trash. See [Installed apps](#installed-apps) above.
+
+![Advanced: Installed apps](images/advanced-installed-apps.jpg)
 
 ### Confirm before ending a system process (1.6)
 

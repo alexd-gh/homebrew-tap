@@ -3,7 +3,7 @@
 **A Windows 11-style Task Manager for macOS.** Processes, Performance, App history, Startup apps, Users, Details and
 Services, laid out and behaving like the Task Manager in Windows 11, built natively for macOS with live graphs,
 per-process GPU, network and power use, and optional advanced pages for drivers, connections, disk space, power
-sensors and Apple silicon internals.
+sensors, Apple silicon internals and installed apps.
 
 This repository is the [Homebrew](https://brew.sh) tap that distributes it. It holds the cask, the release
 downloads and the documentation; the app's source code is not published.
@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.6** (build 56), 23 November 2026 ([what's new](#whats-new-in-16)) |
+| Latest version | **1.7** (build 58), 23 November 2026 ([what's new](#whats-new-in-17)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-16) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-17) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -53,37 +53,32 @@ unzip it and drag **Task Manager** to Applications.
    continues and is remembered; **Quit** (or Escape) closes the app. You're asked again only if the license terms
    change. The text is always available under Task Manager › About Task Manager › License….
 
-## What's new in 1.6
+## What's new in 1.7
 
-A safety and reliability release.
+**Installed apps.** A new Advanced page (⌥⌘6) for managing your apps, modelled on the Installed Apps page of TMOG's
+Task Manager:
 
-**Safer End task.** Ending WindowServer, loginwindow or another critical system process now asks first, as Windows
-does. End task, priority and Efficiency mode check that the process is still the one you picked, so a reused process
-ID is left alone, and End process tree won't touch launchd.
+- Every app in Applications, `~/Applications` and macOS's own apps, with version, size on disk and when you last
+  opened it. Filter to third-party, App Store, Apple or running apps, or apps you haven't opened in 90 days, and
+  search by name or bundle ID.
+- The selected app shows its publisher (from its code signature), where it came from, and the files it keeps
+  outside the app: containers, caches, preferences, saved window state, web data, launch agents and more, with
+  their sizes.
 
-![End this system process? confirmation](docs/images/end-system-process.jpg)
+![Advanced › Installed apps](docs/images/advanced-installed-apps.jpg)
 
-**Trustworthy publishers.** "Apple Inc." and the Apple driver vendor now come only from Apple's own signature; code
-that was changed after signing shows "Invalid signature". Signatures are checked in the background, so large apps
-no longer slow a refresh.
+- **Uninstall…** quits the app, then moves it and the files you tick to the Trash, so you can put them back. Files
+  found only by the app's name, rather than its bundle ID, start unticked so you can check them first. macOS's own
+  apps can't be removed, and Uninstall is off while Task Manager runs as administrator.
 
-**Safer Restart as administrator.** Task Manager checks that its program file is still the code that's running before
-starting the administrator copy, and the app is now signed with the hardened runtime. In the administrator copy, Run
-new task opens things as you unless you tick the administrator box, and commands run as administrator write their
-output to `~/Library/Logs/Task Manager`. Settings you change before restarting always carry over, and Disk space's
-Move to Trash is off while elevated.
+![Uninstall IINA? with its related files](docs/images/installed-apps-uninstall.jpg)
 
-**Connections** looks up at most four host names at a time, and a new **Look up host names** switch turns the lookups
-off.
+Turn on Settings › Other options › Advanced pages to see it.
 
-![Advanced › Connections with the Look up host names switch](docs/images/advanced-connections.jpg)
-
-Also: Disk space scans use far less memory (about 170 MB instead of 1.1 GB for ~/Library), helper commands can't hang
-a page, network speeds stay right on fast links, and the battery log is read only while Performance is open.
-
-1.5 added core kinds on the CPU page and a memory graph split by type; earlier releases added open handles per
-process, Find open file or port, double-click-to-fill-the-screen and background Disk space scans. Every change is in
-the [release history](CHANGELOG.md), with pictures in the [screenshot tour](docs/screenshots.md#new-in-12-to-16).
+1.6 made End task, publishers and Restart as administrator safer; 1.5 added core kinds on the CPU page and a memory
+graph split by type; earlier releases added open handles per process, Find open file or port and background Disk
+space scans. Every change is in the [release history](CHANGELOG.md), with pictures in the
+[screenshot tour](docs/screenshots.md#new-in-12-to-17).
 
 ## Features
 
@@ -111,6 +106,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | **Disk space** | A scan of a volume as a treemap and folder list, with file categories and a history of earlier scans; a scan keeps running while you use other pages |
 | **Power and frequency** | Power, voltage, current, temperature and fan sensors as a tree, with live values and their minimum and maximum |
 | **Apple silicon** | The CPU cluster layout, GPU performance states with their frequencies and voltages, energy per chip block, and media engine activity |
+| **Installed apps** | Every installed app with its size, version, last-opened date, publisher and the files it keeps in Library; Uninstall moves the app and the files you choose to the Trash |
 
 ### Also
 
@@ -133,7 +129,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | Shortcut | Action | Shortcut | Action |
 |---|---|---|---|
 | ⌘F | Search | ⌘N | Run new task |
-| ⌘1 – ⌘8 | Switch page | ⌥⌘1 – ⌥⌘5 | Advanced pages (when on) |
+| ⌘1 – ⌘8 | Switch page | ⌥⌘1 – ⌥⌘6 | Advanced pages (when on) |
 | ⌘R | Refresh now | ⌘⌫ | End task |
 | ⌘E | Efficiency mode | ⌘I | Properties (Details) |
 | ⇧⌘C | Copy summary | ⌥⌘D | Fewer details |
@@ -179,7 +175,7 @@ grey bars.
   <tr>
     <td><a href="docs/screenshots.md#power-and-frequency"><img src="docs/images/advanced-power.jpg" alt="Advanced: Power and frequency"></a><br><sub>Advanced: Power and frequency</sub></td>
     <td><a href="docs/screenshots.md#apple-silicon"><img src="docs/images/advanced-apple-silicon.jpg" alt="Advanced: Apple silicon"></a><br><sub>Advanced: Apple silicon</sub></td>
-    <td><a href="docs/screenshots.md#settings"><img src="docs/images/settings.jpg" alt="Settings"></a><br><sub>Settings</sub></td>
+    <td><a href="docs/screenshots.md#installed-apps"><img src="docs/images/advanced-installed-apps.jpg" alt="Advanced: Installed apps"></a><br><sub>Advanced: Installed apps</sub></td>
   </tr>
 </table>
 
@@ -209,6 +205,11 @@ level bars on every page. All of them are in the [tour](docs/screenshots.md#exte
     <td><a href="docs/screenshots.md#extended-advanced-pages"><img src="docs/images/extended-advanced-apple-silicon.jpg" alt="Extended graphs: Apple silicon"></a><br><sub>Apple silicon</sub></td>
     <td><a href="docs/screenshots.md#extended-graphs"><img src="docs/images/extended-settings.jpg" alt="Extended graphs settings"></a><br><sub>Extended graphs settings</sub></td>
   </tr>
+  <tr>
+    <td><a href="docs/screenshots.md#extended-advanced-pages"><img src="docs/images/extended-advanced-installed-apps.jpg" alt="Extended graphs: Installed apps"></a><br><sub>Installed apps</sub></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ## Permissions and privacy
@@ -221,6 +222,8 @@ and keeps what it records on your Mac.
 | Administrator password or Touch ID | Only when you disable a system startup item, control a system service or restart as administrator | These change system-wide settings or need root |
 | Location | Only if you allow it, for the Performance page's Wi-Fi tile | macOS shows the Wi-Fi network name only to apps with Location access. Your location itself is never read |
 | Login items | Only if you switch on Open at login or Control-Shift-Escape when closed | Registers the app, or its small hotkey helper, as a login item; switch it off in Settings |
+| Other apps' data | Only if macOS asks, when you select a sandboxed app on Advanced › Installed apps | Sizing an app's container in `~/Library/Containers` reads another app's data; if you don't allow it, the size shows "—" |
+| App Management | Only if macOS asks, when you uninstall an app | macOS may require this permission before one app can delete another; Task Manager says so if the move is blocked |
 | Network | Only on the Advanced › Connections page | Looks up the names of remote hosts you're already connected to (reverse DNS); switch it off with **Look up host names**. **Search online** opens your web browser |
 
 **Files it writes:**
