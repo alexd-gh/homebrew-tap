@@ -228,7 +228,7 @@ minimum and maximum since the last reset. Copy or save as CSV.
 ### Apple silicon
 
 The chip's layout: each CPU cluster with its cores, clock and activity, the GPU's clock and power, the media engine
-and power per block.
+and power per block. Only on Apple silicon Macs; an Intel Mac leaves this page out.
 
 ![Advanced: Apple silicon](images/advanced-apple-silicon.jpg)
 

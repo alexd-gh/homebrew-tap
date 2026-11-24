@@ -3,6 +3,11 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.10 — 23 November 2026 (build 67)
+
+- **Intel Macs** no longer show the Apple silicon page, which has nothing to show there. The other Advanced pages
+  keep their shortcuts.
+
 ## 1.9 — 23 November 2026 (build 65)
 
 - **License version 2:** liability capped at US $1 in direct damages instead of excluded outright (fraud and wilful

@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.9** (build 65), 23 November 2026 ([what's new](#whats-new-in-19)) |
+| Latest version | **1.10** (build 67), 23 November 2026 ([what's new](#whats-new-in-110)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-19) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-110) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -61,7 +61,14 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.9
+## What's new in 1.10
+
+- **No Apple silicon page on Intel Macs.** The Advanced section leaves out the Apple silicon page on an Intel Mac,
+  where it has nothing to show. The other Advanced pages keep their shortcuts (Installed apps stays ⌥⌘6, System info
+  ⌥⌘7).
+
+### 1.9
+
 
 - **License version 2.** Liability is now capped at US $1 in direct damages instead of excluded outright, and
   liability for fraud or wilful misconduct is never limited. New clauses cover sensitive information in what you
@@ -106,7 +113,7 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 | **Connections** | Every open network connection by process, with remote host names, service names and traffic, plus a Firewall settings shortcut |
 | **Disk space** | A scan of a volume as a treemap and folder list, with file categories and a history of earlier scans; a scan keeps running while you use other pages |
 | **Power and frequency** | Power, voltage, current, temperature and fan sensors as a tree, with live values and their minimum and maximum |
-| **Apple silicon** | The CPU cluster layout, GPU performance states with their frequencies and voltages, energy per chip block, and media engine activity |
+| **Apple silicon** | The CPU cluster layout, GPU performance states with their frequencies and voltages, energy per chip block, and media engine activity (Apple silicon Macs only) |
 | **Installed apps** | Every installed app with its size, version, last-opened date, publisher and the files it keeps in Library; Uninstall moves the app and the files you choose to the Trash |
 | **System info** | The full hardware, network and software report of Apple's System Information app, searchable, with Copy and Save as text |
 

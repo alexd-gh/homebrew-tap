@@ -92,7 +92,7 @@ rights, other users' and system processes show "—" in those columns.
 | Connections | The open sockets per process from the same `nettop` snapshots, with local and remote endpoints, state and traffic; remote names by reverse DNS (cached), well-known port names, and each endpoint's scope (local, private, public) |
 | Disk space | A parallel scan of the volume's folders, keeping the largest files of each folder and summing the rest so very large disks stay responsive; drawn as a squarified treemap and grouped into file categories |
 | Power and frequency | **Undocumented**: the System Management Controller (SMC) for fans and system power, HID sensors for temperatures, and IOReport for energy, arranged as a tree with each reading's minimum and maximum since launch |
-| Apple silicon | The CPU cluster layout from the device tree, GPU performance states with their frequencies and voltages, energy per chip block from the Energy Model, and media engine (scaler, JPEG) activity counters |
+| Apple silicon | The CPU cluster layout from the device tree, GPU performance states with their frequencies and voltages, energy per chip block from the Energy Model, and media engine (scaler, JPEG) activity counters. Left out on Intel Macs (`hw.optional.arm64`), where the shortcuts of the other pages stay the same |
 | System info | `system_profiler`'s plain-text report for each System Information category (read when you open it, kept until Reload; Wi-Fi, Applications, Frameworks and Fonts take a few seconds). The text report is used rather than JSON because it carries macOS's own labels |
 | Installed apps | App bundles in `/Applications`, `~/Applications` and `/System/Applications` (two folder levels deep), each one's `Info.plist`, last-opened date from Spotlight and size on disk (measured in the background). Related files are entries in `~/Library` and `/Library` folders named by the app's bundle ID, or by its exact name in Application Support, Caches and Logs (never for Apple's apps); read only for the selected app, with its code signature |
 
@@ -176,7 +176,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.9); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.10); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 
@@ -195,4 +195,4 @@ Checksums for each download are in the cask (`sha256`), and Homebrew checks them
 | Services (Windows services) | launchd agents and daemons | — |
 | Run as administrator | Restart as administrator | — |
 | GPU engines | Overall, 3D and tiler | macOS doesn't report Copy or Video engines |
-| — | Advanced pages | Drivers, Connections, Disk space, Power and frequency, Apple silicon, Installed apps, System info |
+| — | Advanced pages | Drivers, Connections, Disk space, Power and frequency, Apple silicon (Apple silicon Macs only), Installed apps, System info |
