@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.11](#new-in-12-to-111)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.13](#new-in-12-to-113)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -274,7 +274,19 @@ At the end of the text, the line under it says so and Accept turns on:
 
 ![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
-## New in 1.2 to 1.11
+## New in 1.2 to 1.13
+
+### Network details (1.13)
+
+Performance › Network › View network details lists every adapter with all ten columns, Utilization to MTU:
+
+![View network details with all ten columns](images/network-details.jpg)
+
+### Efficiency mode (1.12)
+
+A process in Efficiency mode shows the green leaf and "Efficiency mode" in the Status column:
+
+![Details page with a process in Efficiency mode](images/details-efficiency-mode.jpg)
 
 ### Check for updates (1.11)
 

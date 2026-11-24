@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.11** (build 69), 24 November 2026 ([what's new](#whats-new-in-111)) |
+| Latest version | **1.13** (build 73), 24 November 2026 ([what's new](#whats-new-in-113)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-111) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-113) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -61,7 +61,24 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.11
+## What's new in 1.13
+
+- **View network details fits every column.** 1.12 meant to fix this but didn't: Packets out, Errors and MTU were
+  still cut off. The sheet is wider now and all ten columns show without scrolling.
+
+![View network details with all ten columns](docs/images/network-details.jpg)
+
+### 1.12
+
+- **Efficiency mode shows.** Turning it on worked, but on macOS 27 the Status column and the leaf never said so, and
+  the button couldn't turn it off again. Now the process shows the leaf and "Efficiency mode" while it's on, and the
+  same button turns it off.
+- **Smaller fixes:** Startup apps' Disabled time column fits the whole date, and the View and Window menus no longer
+  offer window-tab commands.
+
+![Details page with a process in Efficiency mode](docs/images/details-efficiency-mode.jpg)
+
+### 1.11
 
 - **Check for updates.** Task Manager › Check for Updates… asks GitHub for the latest release and shows what's new.
   Installed with Homebrew? **Update in Terminal** runs `brew upgrade --cask` for you. Downloaded? **Download** opens

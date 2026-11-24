@@ -3,6 +3,17 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.13 — 24 November 2026 (build 73)
+
+- **View network details fits every column.** 1.12's fix didn't work: Packets out, Errors and MTU were still cut
+  off. The sheet is wider and all ten columns show.
+
+## 1.12 — 24 November 2026 (build 71, not pushed to Homebrew)
+
+- **Efficiency mode shows** on macOS 27: the leaf and "Efficiency mode" in Status while it's on, and the button turns
+  it off again.
+- Startup apps' Disabled time column fits the whole date; no window-tab commands in the View and Window menus.
+
 ## 1.11 — 24 November 2026 (build 69)
 
 - **Check for updates** in the Task Manager menu, Settings › Updates and About: shows the new version's notes;
