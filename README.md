@@ -113,7 +113,7 @@ port and background Disk space scans. Every change is in the [release history](C
 | **Users** | Each signed-in user, including remote sessions, plus grouped system accounts | Process actions, sign out |
 | **Details** | Every process, with open handles split into files, sockets and pipes (hover for the breakdown), and optional columns such as architecture, CPU time, peak memory, disk read/written, GPU, elevated, parent PID and start time | End task or process tree, set priority, efficiency mode, process sample, properties with Network and Files tabs |
 | **Services** | launchd services: your agents (User) and system daemons (System), with PID, description and state | Start, stop, restart |
-| **Settings** | Theme, start page, update speed, open at login, always on top, menu bar icon, hide when minimized, Control-Shift-Escape, graph style, advanced readings and pages | — |
+| **Settings** | Theme, start page, update speed, open at login, always on top, menu bar icon, hide when minimized, Control-Shift-Escape, graph style, advanced readings and pages, update checks | — |
 
 ### Advanced pages
 
