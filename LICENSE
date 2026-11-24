@@ -1,4 +1,4 @@
-Task Manager for Mac — Freeware License
+Task Manager for Mac — Freeware License (version 2)
 
 Copyright (c) 2026 alexd-gh. All rights reserved.
 
@@ -20,26 +20,54 @@ Copyright (c) 2026 alexd-gh. All rights reserved.
    KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
    NON-INFRINGEMENT. YOU USE THE SOFTWARE ENTIRELY AT YOUR OWN RISK. THE
-   SOFTWARE CAN END PROCESSES, CHANGE STARTUP ITEMS AND SERVICES, AND RUN
-   COMMANDS WITH ADMINISTRATOR RIGHTS; YOU ARE RESPONSIBLE FOR THE ACTIONS
-   YOU TAKE WITH IT.
+   SOFTWARE CAN END PROCESSES, CHANGE STARTUP ITEMS AND SERVICES, MOVE APPS
+   AND FILES TO THE TRASH, AND RUN COMMANDS WITH ADMINISTRATOR RIGHTS; YOU
+   ARE RESPONSIBLE FOR THE ACTIONS YOU TAKE WITH IT.
 
 5. LIMITATION OF LIABILITY. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
-   LAW, IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DAMAGES WHATSOEVER,
-   WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL
-   (INCLUDING, WITHOUT LIMITATION, LOSS OF DATA, PROFITS OR BUSINESS,
-   DAMAGE TO SYSTEMS OR BUSINESS INTERRUPTION), HOWEVER CAUSED AND ON ANY
-   THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY OR TORT
-   (INCLUDING NEGLIGENCE), ARISING IN ANY WAY OUT OF THE USE OF OR INABILITY
-   TO USE THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   LAW: (a) THE AUTHOR'S TOTAL LIABILITY TO YOU FOR ALL CLAIMS RELATED TO
+   THE SOFTWARE IS LIMITED TO DIRECT DAMAGES OF NO MORE THAN U.S. $1.00;
+   AND (b) THE AUTHOR IS NOT LIABLE FOR ANY OTHER DAMAGES, INCLUDING
+   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, LOSS OF
+   DATA, PROFITS OR BUSINESS, DAMAGE TO SYSTEMS OR BUSINESS INTERRUPTION.
+   THIS APPLIES HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+   CONTRACT, WARRANTY, STRICT LIABILITY OR TORT (INCLUDING NEGLIGENCE), EVEN
+   IF THE AUTHOR KNEW OR SHOULD HAVE KNOWN THAT SUCH DAMAGE WAS POSSIBLE.
+   NOTHING IN THIS LICENSE LIMITS LIABILITY THAT CANNOT BE LIMITED BY LAW,
+   SUCH AS LIABILITY FOR FRAUD OR WILFUL MISCONDUCT.
 
-6. TRADEMARKS. Windows is a trademark of Microsoft Corporation; macOS and Mac
+6. SENSITIVE INFORMATION. Like other system tools, the Software shows and can
+   save or copy information about your computer, such as user names, file
+   paths, process arguments, network addresses and host names (for example
+   in process samples, copied summaries, exported lists and system reports).
+   You are solely responsible for any personal or sensitive information you
+   save, copy or share with others through your use of the Software.
+
+7. NO DATA COLLECTION. The Software does not collect personal data and does
+   not send any information to the author. It uses the network only for
+   features you use, such as looking up the names of hosts your computer is
+   already connected to, or opening a web page or search in your browser.
+
+8. NO SUPPORT. The author has no obligation to provide support, updates or
+   fixes for the Software.
+
+9. TRADEMARKS. Windows is a trademark of Microsoft Corporation; macOS and Mac
    are trademarks of Apple Inc. This Software is not affiliated with,
    endorsed or sponsored by Microsoft or Apple.
 
-7. TERMINATION. This license ends automatically if you break its terms. You
-   must then delete all copies of the Software.
+10. TERMINATION. This license ends automatically if you break its terms. You
+    must then delete all copies of the Software.
 
-8. SEVERABILITY. If any part of this license is held unenforceable, that
-   part is limited to the minimum extent necessary and the rest stays in
-   effect.
+11. GOVERNING LAW. This license is governed by the laws of the State of
+    California, United States, without regard to its conflict-of-laws rules.
+    If you use the Software as a consumer, you also keep the protection of
+    any mandatory consumer laws of the country where you live.
+
+12. YOUR LEGAL RIGHTS. This license describes certain legal rights. You may
+    have other rights under the laws of your state or country, including
+    consumer rights that cannot be waived. This license does not change those
+    rights where the law does not allow it to.
+
+13. SEVERABILITY. If any part of this license is held unenforceable, that
+    part is limited to the minimum extent necessary and the rest stays in
+    effect.

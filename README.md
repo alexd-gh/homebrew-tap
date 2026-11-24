@@ -49,9 +49,10 @@ unzip it and drag **Task Manager** to Applications.
 1. **Open Anyway.** The app is ad-hoc signed and not notarized by Apple, so macOS blocks the first launch. Open it
    once, then go to System Settings › Privacy & Security and click **Open Anyway** next to Task Manager. You do this
    once per version.
-2. **License.** Task Manager shows its license and asks you to accept it before any window opens. **Accept**
-   continues and is remembered; **Quit** (or Escape) closes the app. You're asked again only if the license terms
-   change. The text is always available under Task Manager › About Task Manager › License….
+2. **License.** Task Manager shows its license and asks you to accept it before any window opens. Scroll to the end
+   of the text to turn on **Accept**, which continues and is remembered; **Quit** (or Escape) closes the app. You're
+   asked again only if the license terms change. The text is always available under Task Manager › About Task
+   Manager › License….
 
 ## What's new in 1.8
 
@@ -269,10 +270,18 @@ Task Manager for Mac is **freeware**. The full text is in [LICENSE](LICENSE).
   unmodified copies free of charge with the license included.
 - **You may not** sell, rent or sublicense it, modify or reverse engineer it (except where the law allows), remove
   its copyright notice, or present it as your own.
-- **It's provided as is.** There is no warranty of any kind, express or implied. To the maximum extent the law
-  allows, the author is not liable for any direct, indirect, incidental, special or consequential damage, including
-  loss of data or business interruption. Task Manager can end processes, change startup items and services and run
-  commands as administrator: you're responsible for what you do with it.
+- **It's provided as is.** There is no warranty of any kind, express or implied. Task Manager can end processes,
+  change startup items and services, move apps and files to the Trash and run commands as administrator: you're
+  responsible for what you do with it.
+- **Liability is capped.** To the maximum extent the law allows, the author's total liability is limited to direct
+  damages of US $1, and no other damages (indirect, incidental, special or consequential, including loss of data or
+  business interruption) can be claimed. Liability that the law doesn't allow to be limited, such as for fraud or
+  wilful misconduct, isn't limited.
+- **Your data.** Task Manager collects no data and sends nothing to the author. What you save or copy from it, such
+  as process samples, summaries and exported lists, can contain user names, paths and network addresses: sharing
+  them is your responsibility.
+- **No support** is promised. The license is governed by **California law**; consumers keep the rights their own
+  country's law gives them.
 - **The source code is not licensed** and is not part of this repository.
 
 The app is written in Swift with Apple's frameworks only and contains **no third-party code or libraries**, so no
