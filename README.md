@@ -54,6 +54,13 @@ unzip it and drag **Task Manager** to Applications.
    asked again only if the license terms change. The text is always available under Task Manager › About Task
    Manager › License….
 
+<table>
+  <tr>
+    <td><img src="docs/images/license-prompt.jpg" alt="License prompt with Accept off"><br><sub>Accept is off until you reach the end</sub></td>
+    <td><img src="docs/images/license-prompt-end.jpg" alt="License prompt at the end, Accept on"><br><sub>At the end, Accept turns on</sub></td>
+  </tr>
+</table>
+
 ## What's new in 1.9
 
 - **License version 2.** Liability is now capped at US $1 in direct damages instead of excluded outright, and

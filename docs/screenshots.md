@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.7](#new-in-12-to-17)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.8](#new-in-12-to-18)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -260,9 +260,19 @@ Task Manager › About Task Manager shows the version, build and the changes in 
 
 ![About Task Manager](images/about.jpg)
 
-License… shows the full license and when you accepted it. The first launch asks you to accept the same text.
+License… shows the full license and when you accepted it.
 
 ![License](images/about-license.jpg)
+
+The first launch asks you to accept the same text before any window opens, and again whenever the terms change (as
+with license version 2 in 1.9). **Accept** stays off until you scroll to the end of the license; **Quit** or Escape
+closes the app.
+
+![License prompt, Accept off at the top](images/license-prompt.jpg)
+
+At the end of the text, the line under it says so and Accept turns on:
+
+![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
 ## New in 1.2 to 1.8
 
