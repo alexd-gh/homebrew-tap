@@ -256,7 +256,8 @@ Graphics/Displays, with the chip's GPU and each display:
 
 ## About and license
 
-Task Manager › About Task Manager shows the version, build and the changes in this build.
+Task Manager › About Task Manager shows the version, build, when updates were last checked (with a Check for
+updates… link) and the changes in this release.
 
 ![About Task Manager](images/about.jpg)
 
