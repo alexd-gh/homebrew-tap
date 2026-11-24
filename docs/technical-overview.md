@@ -46,6 +46,7 @@ by default.
 | CPU % and CPU time | Per-process CPU time from `libproc`: the change since the last sample, divided by the elapsed time and the number of logical cores, so 100% means the whole CPU, as on Windows |
 | Memory | Each process's physical footprint, the number Activity Monitor calls "Memory" |
 | Disk | Per-process bytes read and written (resource usage counters), shown as a rate |
+| Updates | GitHub's public `releases/latest` API for this tap, only when asked or when daily checks are on; the answer's ETag is kept so a repeat check doesn't count against GitHub's limit. Versions compare numerically (1.10 is newer than 1.9). A Homebrew install (found by its `Caskroom` folder) updates with `brew upgrade --cask` in Terminal; nothing is downloaded or installed by the app itself |
 | Network | Per-process traffic from macOS's `nettop` tool (there's no public per-process network API), read as one snapshot every ~5 seconds |
 | GPU | Per-process GPU time from the graphics driver's registry entries (IOKit `IOAccelerator`), which works for every process without root |
 | Power usage and trend | Each process's energy counter (CPU energy, in nanojoules), turned into watts and mapped to Windows' words: under 0.1 W Very low, up to 5 W and more Very high; the trend is a 2-minute moving average |
@@ -176,7 +177,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.10); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.11); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.8](#new-in-12-to-18)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.11](#new-in-12-to-111)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -274,7 +274,26 @@ At the end of the text, the line under it says so and Accept turns on:
 
 ![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
-## New in 1.2 to 1.8
+## New in 1.2 to 1.11
+
+### Check for updates (1.11)
+
+Task Manager › Check for Updates… shows what's new in the latest release and how to update. A Homebrew install
+updates in Terminal; a downloaded one opens the release page.
+
+![Task Manager 1.11 is available](images/update-window.jpg)
+
+With daily checks on, a bar at the top of the window says when a new version is out:
+
+![Update bar in the main window](images/update-bar.jpg)
+
+Daily checks are opt-in. New installs get an unticked box on the license prompt:
+
+![Check for updates box on the license prompt](images/license-update-box.jpg)
+
+Everyone else switches them on in Settings › Updates, where they start off:
+
+![Settings › Updates](images/settings-updates.jpg)
 
 ### System info (1.8)
 

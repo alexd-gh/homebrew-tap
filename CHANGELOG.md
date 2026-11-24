@@ -3,6 +3,14 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.11 — 24 November 2026 (build 69)
+
+- **Check for updates** in the Task Manager menu, Settings › Updates and About: shows the new version's notes;
+  Homebrew installs update in Terminal (`brew upgrade --cask`), downloaded ones open the release. Skip a version or
+  be reminded later.
+- **Daily checks are opt-in:** an unticked box on the first-run license prompt for new installs, otherwise
+  Settings › Updates, off by default. A bar at the top of the window says when a new version is out.
+
 ## 1.10 — 23 November 2026 (build 67)
 
 - **Intel Macs** no longer show the Apple silicon page, which has nothing to show there. The other Advanced pages

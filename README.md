@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.10** (build 67), 23 November 2026 ([what's new](#whats-new-in-110)) |
+| Latest version | **1.11** (build 69), 24 November 2026 ([what's new](#whats-new-in-111)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-110) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-111) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -61,7 +61,19 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.10
+## What's new in 1.11
+
+- **Check for updates.** Task Manager › Check for Updates… asks GitHub for the latest release and shows what's new.
+  Installed with Homebrew? **Update in Terminal** runs `brew upgrade --cask` for you. Downloaded? **Download** opens
+  the release. Skip a version or be reminded later. Also in Settings › Updates (Check now) and in About.
+- **Automatic checks are opt-in.** Once a day, with a bar at the top of the window when a new version is out. New
+  installs get an unticked box on the first-run license prompt; if you already have Task Manager, turn it on in
+  **Settings › Updates**, where it starts off. A check sends nothing about you or your Mac.
+
+![Task Manager 1.11 is available](docs/images/update-window.jpg)
+
+### 1.10
+
 
 - **No Apple silicon page on Intel Macs.** The Advanced section leaves out the Apple silicon page on an Intel Mac,
   where it has nothing to show. The other Advanced pages keep their shortcuts (Installed apps stays ⌥⌘6, System info
@@ -86,7 +98,7 @@ unzip it and drag **Task Manager** to Applications.
 1.7 added the Installed apps page with Uninstall; 1.6 made End task and publishers safer; 1.5 added core kinds on
 the CPU page and a memory graph split by type; earlier releases added open handles per process, Find open file or
 port and background Disk space scans. Every change is in the [release history](CHANGELOG.md), with pictures in the
-[screenshot tour](docs/screenshots.md#new-in-12-to-18).
+[screenshot tour](docs/screenshots.md#new-in-12-to-111).
 
 ## Features
 
@@ -130,6 +142,8 @@ Switched on in Settings, an **Advanced** section adds pages that Windows Task Ma
 - **Restart as administrator** (File menu) to see CPU, memory and disk for other users' and root's processes.
   Ending a critical system process asks first.
 - **Control-Shift-Escape** brings Task Manager forward and, if you switch it on, also opens it when it isn't running.
+- **Check for updates** (Task Manager menu): shows what's new and updates a Homebrew install in Terminal; daily
+  checks are opt-in.
 - **One copy only**, as on Windows: launching it again brings the running window forward.
 - **Light and dark app icon**; on macOS 26 and later the Dock and Finder switch with dark mode.
 
@@ -228,8 +242,8 @@ level bars on every page. All of them are in the [tour](docs/screenshots.md#exte
 
 ## Permissions and privacy
 
-Task Manager has **no telemetry, no analytics, no accounts and no update checks**. It reads the state of your own Mac
-and keeps what it records on your Mac.
+Task Manager has **no telemetry, no analytics and no accounts**, and checks for updates only when you ask or switch
+it on. It reads the state of your own Mac and keeps what it records on your Mac.
 
 | Access | When | Why |
 |---|---|---|
@@ -239,6 +253,7 @@ and keeps what it records on your Mac.
 | Other apps' data | Only if macOS asks, when you select a sandboxed app on Advanced › Installed apps | Sizing an app's container in `~/Library/Containers` reads another app's data; if you don't allow it, the size shows "—" |
 | App Management | Only if macOS asks, when you uninstall an app | macOS may require this permission before one app can delete another; Task Manager says so if the move is blocked |
 | Network | Only on the Advanced › Connections page | Looks up the names of remote hosts you're already connected to (reverse DNS); switch it off with **Look up host names**. **Search online** opens your web browser |
+| Network (updates) | Only when you choose Check for Updates, or once a day if you switch on **Check for updates automatically** (off unless you tick it) | Asks GitHub's public API for the latest release of this tap. No account, identifier or details about your Mac are sent; GitHub sees your IP address, as with any download |
 
 **Files it writes:**
 
