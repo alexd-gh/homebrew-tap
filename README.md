@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.8** (build 61), 23 November 2026 ([what's new](#whats-new-in-18)) |
+| Latest version | **1.9** (build 65), 23 November 2026 ([what's new](#whats-new-in-19)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-18) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-19) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -54,28 +54,20 @@ unzip it and drag **Task Manager** to Applications.
    asked again only if the license terms change. The text is always available under Task Manager › About Task
    Manager › License….
 
-## What's new in 1.8
+## What's new in 1.9
 
-**System info.** A new Advanced page (⌥⌘7) shows what Apple's System Information app shows, with macOS's own
-labels and wording:
+- **License version 2.** Liability is now capped at US $1 in direct damages instead of excluded outright, and
+  liability for fraud or wilful misconduct is never limited. New clauses cover sensitive information in what you
+  save or copy, no data collection, no support, California law and your consumer rights. It's still free to use,
+  also commercially ([summary](#license)). Everyone is asked once to accept the new text, and **Accept turns on
+  after you scroll to the end of the license**.
+- **A smaller download.** The Control-Shift-Escape helper is now its own 177 KB program instead of a second copy of
+  the app: the installed app drops from 37 MB to 20 MB and the ZIP from 12 MB to 7.7 MB.
+- **Installed apps** finds folders named after an app's vendor (such as `Application Support/BraveSoftware`), marked
+  "vendor" and unticked in Uninstall, and the Opened column shows "Now" or "Unknown" with the reason instead of "—".
 
-- **Hardware:** Hardware Overview, Memory, Audio, Bluetooth, Graphics/Displays, NVMExpress, Power, Storage,
-  Thunderbolt/USB4, USB and the rest. **Network:** Wi-Fi, Network, Locations, Firewall. **Software:** Software
-  Overview, Applications, Extensions, Fonts, Installations, Profiles and more.
-- Long lists open folded and sorted by name, the search box filters the report, and **Copy** or **Save as text…**
-  exports it. **Open System Information** opens Apple's app.
-
-![Advanced › System info: Hardware Overview](docs/images/advanced-system-info.jpg)
-
-Also in 1.8:
-
-- **Restart as administrator works again.** In 1.6 and 1.7 its check that the app's program file hadn't changed
-  always failed on the universal app, so it said the file had changed instead of restarting.
-- **Safer Uninstall.** Installed apps moves the app to the Trash first and its Library files only once that worked,
-  so a refused or cancelled uninstall no longer leaves an app without its settings. An app owned by an
-  administrator or another user, which Task Manager can't move, now says so and points to Finder.
-
-Turn on Settings › Other options › Advanced pages to see System info and the other Advanced pages.
+1.8 added the **System info** page (⌥⌘7), the full report of Apple's System Information app; see the
+[screenshot tour](docs/screenshots.md#system-info-18) and the [release history](CHANGELOG.md).
 
 1.7 added the Installed apps page with Uninstall; 1.6 made End task and publishers safer; 1.5 added core kinds on
 the CPU page and a memory graph split by type; earlier releases added open handles per process, Find open file or
