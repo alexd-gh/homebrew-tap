@@ -73,7 +73,7 @@ rights, other users' and system processes show "—" in those columns.
 | Disks | One tile per physical drive from IOKit block storage drivers (bytes and operations read/written, busy time), with the volumes on each drive and their capacity |
 | Wi-Fi and Ethernet | Interface byte counters and addresses (`getifaddrs`), adapter names and types from System Configuration, and Wi-Fi details (signal, noise, channel, security, PHY mode) from CoreWLAN. The network name needs Location access because macOS requires it |
 | GPU | Utilization (overall, renderer/3D, tiler) and memory in use from the GPU driver's performance statistics in the IOKit registry |
-| NPU | **Undocumented**: Neural Engine energy from IOReport, shown as power. On some chips and macOS versions this reads 0 without root; the tile then says so |
+| NPU | **Undocumented**: Neural Engine energy from IOReport, shown as power. On some chips and macOS versions this reads 0, even as root (an M4 Max on macOS 27, checked under load); the tile then shows "—" and says so |
 | Battery | The smart battery's registry entry (charge, capacity and health, cycle count, voltage, current, power adapter), and the charge history that macOS keeps in its power management log (`pmset`) |
 | Temperatures | **Undocumented**: the HID temperature sensors that macOS itself reads |
 
@@ -177,7 +177,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.13); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.14); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

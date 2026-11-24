@@ -3,6 +3,12 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.14 — 24 November 2026 (build 77)
+
+- **Startup apps' Running now column** sorts by whether the item is running, not by its name.
+- **NPU page:** says plainly when macOS reports no Neural Engine energy, administrator rights included, instead of
+  suggesting Restart as administrator.
+
 ## 1.13 — 24 November 2026 (build 73)
 
 - **View network details fits every column.** 1.12's fix didn't work: Packets out, Errors and MTU were still cut

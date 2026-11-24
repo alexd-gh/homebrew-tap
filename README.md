@@ -12,14 +12,14 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.13** (build 73), 24 November 2026 ([what's new](#whats-new-in-113)) |
+| Latest version | **1.14** (build 77), 24 November 2026 ([what's new](#whats-new-in-114)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
 | Signing | Ad-hoc signed, not notarized ([first launch](#first-launch)) |
 | Author | [alexd-gh](https://github.com/alexd-gh) |
 
-[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-113) · [Features](#features) · [Screenshots](#screenshots) ·
+[Install](#install) · [First launch](#first-launch) · [What's new](#whats-new-in-114) · [Features](#features) · [Screenshots](#screenshots) ·
 [Permissions and privacy](#permissions-and-privacy) · [Known limits](#known-limits) · [License](#license) ·
 [Technical overview](docs/technical-overview.md) · [Release history](CHANGELOG.md)
 
@@ -61,7 +61,16 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.13
+## What's new in 1.14
+
+- **Startup apps' Running now column sorts properly.** Click its header to put the running items together; it used
+  to sort by the item's name.
+- **Clearer NPU page.** On some Macs macOS reports no Neural Engine energy at all, even to an administrator. The page
+  now says so, instead of suggesting Restart as administrator.
+
+![Startup apps sorted by Running now](docs/images/startup-running-now.jpg)
+
+### 1.13
 
 - **View network details fits every column.** 1.12 meant to fix this but didn't: Packets out, Errors and MTU were
   still cut off. The sheet is wider now and all ten columns show without scrolling.

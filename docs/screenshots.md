@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.13](#new-in-12-to-113)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.14](#new-in-12-to-114)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -141,7 +141,7 @@ The memory composition bar becomes an LED strip with a colour per type.
 
 ![Extended graphs: GPU](images/extended-performance-gpu.jpg)
 
-The NPU tile (Show advanced readings) shows Neural Engine power. On this Mac macOS only gives that reading to
+The NPU tile (Show advanced readings) shows Neural Engine power. On this Mac macOS gives no reading, not even to
 administrators, and the page says so.
 
 ![Extended graphs: NPU](images/extended-performance-npu.jpg)
@@ -274,7 +274,18 @@ At the end of the text, the line under it says so and Accept turns on:
 
 ![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
-## New in 1.2 to 1.13
+## New in 1.2 to 1.14
+
+### Running now sorting and the NPU note (1.14)
+
+Startup apps' Running now column sorts by whether each item is running:
+
+![Startup apps sorted by Running now](images/startup-running-now.jpg)
+
+When macOS gives no Neural Engine energy reading, the NPU page says so. On this Mac that's also true with
+administrator rights:
+
+![NPU page with no reading](images/npu-no-reading.jpg)
 
 ### Network details (1.13)
 
