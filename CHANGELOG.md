@@ -3,6 +3,15 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.16 — 25 November 2026 (build 82)
+
+- **Process actions** act only on the process that was chosen, also when its ID is reused while a confirmation is
+  open.
+- **Run new task as administrator:** the log is written by your account, not the administrator one, and is private.
+- **Restart as administrator** runs a checked copy from a folder only the administrator can change.
+- **Smaller:** Restart only for the real system apps; kernel_task's priority can't change Task Manager's own; no build
+  folder names in the download.
+
 ## 1.15 — 24 November 2026 (build 79)
 
 - **Wi-Fi name note:** with Location Services off for the whole Mac, the page says so and links to System Settings;

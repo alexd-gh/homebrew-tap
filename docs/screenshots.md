@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.15](#new-in-12-to-115)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.16](#new-in-12-to-116)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -275,7 +275,12 @@ At the end of the text, the line under it says so and Accept turns on:
 
 ![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
-## New in 1.2 to 1.15
+## New in 1.2 to 1.16
+
+### Safety fixes (1.16)
+
+1.16's changes don't show on screen: process actions keep the process you chose, and the administrator features
+run more safely. The screenshots below are still current.
 
 ### Wi-Fi with Location Services off (1.15)
 

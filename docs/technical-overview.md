@@ -112,7 +112,7 @@ depends on it shows "—" or is hidden; the rest of the app keeps working.
 | Create process sample | macOS's `sample` tool records the process's call stacks for a few seconds, the Mac equivalent of Windows' "Create dump file" |
 | Enable / disable startup item | Changes launchd's enabled state for that agent or daemon; takes effect at the next sign-in or restart |
 | Start / stop / restart service | Asks launchd to start, stop or restart the service |
-| Run new task | Opens an app, file, folder or web address; anything else runs as a shell command in the background. Ticking "Create this task with administrative privileges" runs program files and commands as root, with their output in `~/Library/Logs/Task Manager/Run as administrator.log`; in the administrator copy everything else opens as you |
+| Run new task | Opens an app, file, folder or web address; anything else runs as a shell command in the background. Ticking "Create this task with administrative privileges" runs program files and commands as root, with their output in `~/Library/Logs/Task Manager/Run as administrator.log` (written by your account, not root's, since 1.16; private to you); in the administrator copy everything else opens as you |
 | Search online | Opens a web search for the process name in your browser |
 | Uninstall (Installed apps) | Quits the app if it's running (waiting up to 10 seconds), then moves the app to the Trash on its own and, only once that worked, the related files you ticked. macOS doesn't ask for a password here: an app owned by an administrator or another user is refused, and Task Manager says to drag it to the Trash in Finder. macOS's own apps and Task Manager itself can't be uninstalled |
 
@@ -124,9 +124,11 @@ Task Manager runs as you. Two things need more:
   If Touch ID for `sudo` is set up on your Mac, you approve it with Touch ID; otherwise macOS shows its standard
   administrator password dialog. Task Manager never sees or stores your password.
 - **Restart as administrator** (File menu) starts a second copy as root, after you authenticate, and closes the
-  first. Before that it checks that the app's program file is still the code that's running, and the root shell
-  checks its code signature hash again just before starting it (for the architecture that's running; in 1.6 and 1.7
-  this check failed on the universal app, so Restart as administrator didn't work). Your current settings are handed over to it (they
+  first. Before that it checks that the app's program file is still the code that's running. Since 1.16 the root
+  shell then copies the app into a new folder only root can change, checks the copy's code signature hash (for the
+  architecture that's running), and starts the copy, so nothing you can write to is run as root; the administrator
+  copy removes that folder when it quits. (In 1.6 and 1.7 the signature check failed on the universal app, so
+  Restart as administrator didn't work.) Your current settings are handed over to it (they
   replace any root saved earlier), so it looks the same, but changes you make while elevated aren't saved, because
   root has its own preferences. Disk space's Move to Trash and Installed apps' Uninstall are off in the administrator copy.
 
@@ -177,7 +179,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.15); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.16); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

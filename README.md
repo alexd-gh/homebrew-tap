@@ -12,7 +12,7 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.15** (build 79), 24 November 2026 ([what's new](#whats-new-in-115)) |
+| Latest version | **1.16** (build 82), 25 November 2026 ([what's new](#whats-new-in-116)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
@@ -61,7 +61,22 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.15
+## What's new in 1.16
+
+Safety fixes from a code review; nothing looks different.
+
+- **Actions reach only the process you chose.** End task, End process tree, Efficiency mode, priority and process
+  samples remember which process you picked. If it quits and macOS gives its ID to a new process, for example while
+  a confirmation is open, Task Manager leaves the new one alone.
+- **Safer Run new task as administrator.** The output is written to your log by your own account, never by the
+  administrator one, and the log is private to you.
+- **Safer Restart as administrator.** Task Manager runs a checked copy of itself from a folder only the
+  administrator can change.
+- **Smaller fixes.** Restart is offered only for the real Finder, Dock and the other system apps it applies to.
+  Changing kernel_task's priority no longer changes Task Manager's own. The download no longer contains folder names
+  from the Mac it was built on.
+
+### 1.15
 
 - **Clearer Wi-Fi name note.** With Location Services turned off for the whole Mac, the Wi-Fi page said Task
   Manager's own Location access was off. It now says Location Services is off for this Mac, and its link opens
