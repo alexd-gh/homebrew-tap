@@ -1,6 +1,6 @@
 cask "win-task-manager" do
-  version "1.14"
-  sha256 "88f8aec199c126e44fcc8a1daca1c70a255f1a428b13d0c0ffe76e4d458cdd15"
+  version "1.15"
+  sha256 "897cab23ec046999e0eb152af18b8fed5895e63d0d73be6e5e43a4de982cdc19"
 
   url "https://github.com/alexd-gh/homebrew-tap/releases/download/v#{version}/TaskManager-#{version}.zip"
   name "Task Manager"

@@ -3,6 +3,13 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.15 — 24 November 2026 (build 79)
+
+- **Wi-Fi name note:** with Location Services off for the whole Mac, the page says so and links to System Settings;
+  it used to say Task Manager's own Location access was off.
+- **Not responding** seen working: a hung app shows it in Status once macOS flags the app as unresponsive (Show
+  advanced readings).
+
 ## 1.14 — 24 November 2026 (build 77)
 
 - **Startup apps' Running now column** sorts by whether the item is running, not by its name.
