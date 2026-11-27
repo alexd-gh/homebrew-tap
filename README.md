@@ -152,11 +152,10 @@ Safety fixes from a code review; nothing looks different.
 ### 1.9
 
 
-- **License version 2.** Liability is now capped at US $1 in direct damages instead of excluded outright, and
-  liability for fraud or wilful misconduct is never limited. New clauses cover sensitive information in what you
-  save or copy, no data collection, no support, California law and your consumer rights. It's still free to use,
-  also commercially ([summary](#license)). Everyone is asked once to accept the new text, and **Accept turns on
-  after you scroll to the end of the license**.
+- **License version 2.** Liability is now capped at US $1 in direct damages instead of excluded outright. New
+  clauses cover sensitive information in what you save or copy, no data collection, no support, California law and
+  your consumer rights. It's still free to use, also commercially ([summary](#license)). Everyone is asked once to
+  accept the new text, and **Accept turns on after you scroll to the end of the license**.
 - **A smaller download.** The Control-Shift-Escape helper is now its own 177 KB program instead of a second copy of
   the app: the installed app drops from 37 MB to 20 MB and the ZIP from 12 MB to 7.7 MB.
 - **Installed apps** finds folders named after an app's vendor (such as `Application Support/BraveSoftware`), marked
@@ -366,8 +365,7 @@ Task Manager for Mac is **freeware**. The full text is in [LICENSE](LICENSE).
   responsible for what you do with it.
 - **Liability is capped.** To the maximum extent the law allows, the author's total liability is limited to direct
   damages of US $1, and no other damages (indirect, incidental, special or consequential, including loss of data or
-  business interruption) can be claimed. Liability that the law doesn't allow to be limited, such as for fraud or
-  wilful misconduct, isn't limited.
+  business interruption) can be claimed.
 - **Your data.** Task Manager collects no data and sends nothing to the author. What you save or copy from it, such
   as process samples, summaries and exported lists, can contain user names, paths and network addresses: sharing
   them is your responsibility.

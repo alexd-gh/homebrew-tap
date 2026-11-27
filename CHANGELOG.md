@@ -61,9 +61,9 @@ Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). 
 
 ## 1.9 — 23 November 2026 (build 65)
 
-- **License version 2:** liability capped at US $1 in direct damages instead of excluded outright (fraud and wilful
-  misconduct never limited), plus clauses on sensitive information, no data collection, no support, California law
-  and consumer rights. Everyone accepts it once; **Accept turns on after scrolling to the end** of the license.
+- **License version 2:** liability capped at US $1 in direct damages instead of excluded outright, plus clauses on
+  sensitive information, no data collection, no support, California law and consumer rights. Everyone accepts it
+  once; **Accept turns on after scrolling to the end** of the license.
 - **Smaller download:** the Control-Shift-Escape helper is its own 177 KB program, so the app drops from 37 MB to
   20 MB and the ZIP from 12 MB to 7.7 MB.
 - **Installed apps** finds vendor folders (marked "vendor", unticked in Uninstall); the Opened column shows "Now" or
