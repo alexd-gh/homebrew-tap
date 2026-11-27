@@ -3,6 +3,16 @@
 Downloads are on [Releases](https://github.com/alexd-gh/homebrew-tap/releases). Update with
 `brew upgrade --cask win-task-manager`.
 
+## 1.17 — 26 November 2026 (build 84)
+
+- **Restart as administrator** acts for your account: Services and Startup apps show your agents, Installed apps'
+  Open and Run new task's `~` use your account; settings are handed over only from a file you own.
+- **App history** records only your processes, ignores stale network readings, prunes while running, is private and
+  sets a damaged file aside.
+- **Installed apps:** Apple and App Store status from the signature; shared-ID files not ticked for Uninstall.
+- **Disk space:** Move to Trash checks the item before and after moving it.
+- **Connections:** a listener on one network address counts as open to the network.
+
 ## 1.16 — 25 November 2026 (build 82)
 
 - **Process actions** act only on the process that was chosen, also when its ID is reused while a confirmation is

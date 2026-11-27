@@ -128,9 +128,11 @@ Task Manager runs as you. Two things need more:
   shell then copies the app into a new folder only root can change, checks the copy's code signature hash (for the
   architecture that's running), and starts the copy, so nothing you can write to is run as root; the administrator
   copy removes that folder when it quits. (In 1.6 and 1.7 the signature check failed on the universal app, so
-  Restart as administrator didn't work.) Your current settings are handed over to it (they
-  replace any root saved earlier), so it looks the same, but changes you make while elevated aren't saved, because
-  root has its own preferences. Disk space's Move to Trash and Installed apps' Uninstall are off in the administrator copy.
+  Restart as administrator didn't work.) Since 1.17 the administrator copy acts for the account that restarted it:
+  Services and Startup apps show and change your agents, and Installed apps' Open and Run new task open things as
+  you. Your current settings are handed over to it, from a file only you own and limited to Task Manager's own
+  settings (they replace any root saved earlier), so it looks the same, but changes you make while elevated aren't
+  saved, because root has its own preferences. Disk space's Move to Trash and Installed apps' Uninstall are off in the administrator copy.
 
 ## Background pieces
 
@@ -149,7 +151,7 @@ Both login items appear in System Settings › General › Login Items and switc
 | What | Where | Kept for |
 |---|---|---|
 | Settings, license acceptance, startup-item disable dates, disk scan history | `~/Library/Preferences/local.alexd-gh.wintaskmanager.plist` (`local.alexander.wintaskmanager.plist` before 1.2) | Until you change or delete them |
-| App history (daily totals per app) | `~/Library/Application Support/Task Manager/` | 30 days, saved every minute and on quit |
+| App history (daily totals per app, your own processes only) | `~/Library/Application Support/Task Manager/` (private to you since 1.17) | 30 days, saved every minute and on quit |
 | Process samples, output of commands run as administrator | `~/Library/Logs/Task Manager/` | Until you delete them |
 
 Nothing is sent anywhere. The only network traffic Task Manager causes itself is reverse DNS lookups for remote
@@ -179,7 +181,7 @@ Task Manager is meant to stay out of the way of what it measures:
 | Binary | Universal: Apple silicon (arm64) and Intel (x86_64) |
 | Signing | Ad-hoc signed with the hardened runtime (since 1.6), not notarized, so the first launch needs **Open Anyway**. The only entitlement is Location, for the Wi-Fi name |
 | Bundle identifiers | `local.alexd-gh.wintaskmanager` (app), `local.alexd-gh.wintaskmanager.hotkey` (hotkey helper); before 1.2 they began with `local.alexander`, and 1.2 copies the old settings over on first launch |
-| Version and build | Version is the release (1.16); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
+| Version and build | Version is the release (1.17); the build number goes up by one with every change, so a higher build is always newer. About shows both, the build date and the changes since the previous release |
 | App icon | A light and a dark icon; on macOS 26 and later the Dock and Finder pick the one that matches dark mode |
 | License | Shown in About › License… and accepted on first launch; see [LICENSE](../LICENSE) |
 

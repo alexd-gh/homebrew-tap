@@ -6,7 +6,7 @@ are covered with grey bars; everything else is as the app shows it.
 
 [Processes](#processes) · [Performance](#performance) · [App history](#app-history) · [Startup apps](#startup-apps) ·
 [Users](#users) · [Details](#details) · [Services](#services) · [Settings](#settings) · [Extended graphs](#extended-graphs) ·
-[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.16](#new-in-12-to-116)
+[Advanced pages](#advanced-pages) · [About and license](#about-and-license) · [New in 1.2 to 1.17](#new-in-12-to-117)
 
 Back to the [README](../README.md) · [Technical overview](technical-overview.md)
 
@@ -275,7 +275,22 @@ At the end of the text, the line under it says so and Accept turns on:
 
 ![License prompt at the end, Accept on](images/license-prompt-end.jpg)
 
-## New in 1.2 to 1.16
+## New in 1.2 to 1.17
+
+### Administrator copy acts for you (1.17)
+
+After File › Restart as administrator, Services lists your own agents (Group: User) next to the system services;
+before 1.17 the administrator copy showed root's, which is an empty list. Startup apps likewise shows your agents,
+and Installed apps' Open starts apps as you.
+
+![Services in the administrator copy, with your User agents](images/services-administrator.jpg)
+
+### Listening on one address (1.17)
+
+A program listening on one network address, not every interface, now counts as open to the network. Here `nc`
+listens on the Mac's Wi-Fi address only; Reaches says "Open on" that address.
+
+![Connections: a listener on one address under Open to network](images/connections-open-on-address.jpg)
 
 ### Safety fixes (1.16)
 

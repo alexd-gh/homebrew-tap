@@ -12,7 +12,7 @@ downloads and the documentation; the app's source code is not published.
 
 | | |
 |---|---|
-| Latest version | **1.16** (build 82), 25 November 2026 ([what's new](#whats-new-in-116)) |
+| Latest version | **1.17** (build 84), 26 November 2026 ([what's new](#whats-new-in-117)) |
 | Requires | macOS 14 Sonoma or later |
 | Runs on | Apple silicon and Intel (universal app) |
 | Price | Free, also for commercial use ([license](#license)) |
@@ -61,7 +61,26 @@ unzip it and drag **Task Manager** to Applications.
   </tr>
 </table>
 
-## What's new in 1.16
+## What's new in 1.17
+
+More fixes from the code review ([screenshots](docs/screenshots.md#administrator-copy-acts-for-you-117)).
+
+- **Restart as administrator works for you.** The administrator copy now acts for your account, not root's:
+  Services and Startup apps list and change your own agents (before, they were empty there), Installed apps' Open
+  starts apps as you, and `~` in Run new task means your home folder.
+- **Safer settings handover.** The administrator copy takes your settings only from a small file you own, and only
+  Task Manager's own settings. A cancelled restart deletes the file.
+- **App history is yours only.** It records only your own processes, stops counting network use when readings go
+  stale, drops days older than 30 while running, and keeps its file private. A damaged file loads what's valid and
+  is set aside.
+- **Installed apps checks signatures.** Apple and App Store status come from the app's signature, not its name or a
+  receipt file. Files of apps that share an ID are no longer ticked for Uninstall.
+- **Safer Move to Trash in Disk space.** It checks the item is still the one scanned, before and after moving it,
+  and puts it back if not.
+- **Connections:** a program listening on one network address counts as open to the network ("Open on one
+  address").
+
+### 1.16
 
 Safety fixes from a code review; nothing looks different.
 
